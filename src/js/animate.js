@@ -16,8 +16,14 @@ $(window).on("load", function(){
     var close = $(".closeButton");
     var closeTerminal = $("#closeTerminal");
     var closeResume = $("#closeResume");
+    var closeContact = $("#closeContact");
 
     var bar = $(".navBarSmall");
+
+    var terminalNav = $("#navTerminal");
+    var resumeNav =  $("#navResume");
+    var contactNav = $("#navContact");
+
     var terminalBox = $("#terminalBox");
 
     var terminalIcon = $("#terminalIcon");
@@ -33,9 +39,11 @@ $(window).on("load", function(){
     var tile1 = $('#tile_1');
     var tile2 = $('#tile_2');
     var tile3 = $('#tile_3');
+
     var resumeBox = $('#resumeBox');
     var contactBox = $('#contactBox');
     var resumeContent = $('#resumeContent');
+    var contactContent = $('#contactContent');
 
     /**
      * lock used to only allow one icon animation to occur at a time.
@@ -55,36 +63,12 @@ $(window).on("load", function(){
     /**
      * Click events
      */
-    closeTerminal.click(function(){
-        if(!iconLock){
-            terminalCollapse();
-            iconLock = true;
-        }
-    });
-    closeResume.click(function(){
-        if(!iconLock){
-            resumeCollapse();
-            iconLock = true;
-        }
-    });
-    terminalIcon.click(function(){
-        if (!iconLock){
-            terminalExpand();
-            iconLock = true;
-        }
-    });
-    resumeIcon.click(function(){
-        if (!iconLock) {
-            resumeExpand();
-            iconLock = true;
-        }
-    });
-    contactIcon.click(function(){
-        if (!iconLock) {
-            contactExpand();
-            iconLock = true;
-        }
-    });
+    closeTerminal.click(function(){ clickButton(terminalCollapse()); });
+    closeResume.click(function(){ clickButton(resumeCollapse()); });
+    closeContact.click(function(){ clickButton(contactCollapse()); });
+    terminalIcon.click(function(){ clickButton(terminalExpand()); });
+    resumeIcon.click(function(){ clickButton(resumeExpand()); });
+    contactIcon.click(function(){ clickButton(contactExpand()); });
 
     up.click(function() {
         if (content.height() < 71) {
@@ -94,43 +78,57 @@ $(window).on("load", function(){
             scrollDown();
     });
 
+    function clickButton(func){
+        if(!iconLock){
+            func();
+            iconLock = true;
+        }
+    }
 
     /**
-     * key presses
+     * key presses events
      */
     $(document).keyup(function(e) {
-        if (e.keyCode == 27) { // escape key
-            closeAll();
-        }
-        if (e.keyCode == 38) { // up key
-            scrollUp();
-        }
-        if (e.keyCode == 40) { // down key
-            scrollDown();
-        }
+        if (e.keyCode == 27) { closeAll(); }    //esc key
+        if (e.keyCode == 38) { scrollUp(); }    //up arrow key
+        if (e.keyCode == 40) { scrollDown(); }  //down arrow key
     });
 
     /**
      * on-hover events
      */
     terminalIcon.hover(function(){
-        terminalBox.animate({ left: "20px" }, "fast");
+        onHover(terminalBox);
     }, function() {
-        if(!iconLock)
-            terminalBox.animate({ left: "10px" }, "fast");
+        offHover(terminalBox);
     });
     resumeIcon.hover(function(){
-        resumeBox.animate({ left: "20px" }, "fast");
+        onHover(resumeBox);
     }, function() {
-        if(!iconLock)
-            resumeBox.animate({ left: "10px" }, "fast");
+        offHover(resumeBox);
     });
     contactIcon.hover(function(){
-        contactBox.animate({ left: "20px" }, "fast");
+        onHover(contactBox);
     }, function() {
-        if(!iconLock)
-            contactBox.animate({ left: "10px" }, "fast");
+        offHover(contactBox);
     });
+
+    /**
+     * Icon on hover anumation
+     * @param element
+     */
+    function onHover(element){
+        element.animate({ left: "20px"}, "fast");
+    }
+
+    /**
+     * Icon off hover animation
+     * @param element
+     */
+    function offHover(element){
+        if(!iconLock && element.width() == 50)
+            element.animate({left: "10px"}, "fast");
+    }
 
 
 
@@ -224,9 +222,9 @@ $(window).on("load", function(){
      */
     function terminalCollapse() {
         overlay.fadeOut("slow");
-        close.fadeOut("slow");
+        closeTerminal.fadeOut("slow");
         terminal.fadeOut("slow");
-        bar.fadeOut("slow", function(){
+        terminalNav.fadeOut("slow", function(){
             terminalBox.animate({
                 height: '50px',
                 width: '50px',
@@ -277,8 +275,8 @@ $(window).on("load", function(){
                 borderBottomLeftRadius: 5,
                 borderBottomRightRadius: 5
             }, function(){
-                bar.fadeIn("slow");
-                close.fadeIn("slow");
+                terminalNav.fadeIn("slow");
+                closeTerminal.fadeIn("slow");
                 terminal.fadeIn("slow");
                 overlay.fadeIn("slow");
                 typeAnimate();
@@ -303,8 +301,8 @@ $(window).on("load", function(){
                borderBottomLeftRadius: 5,
                borderBottomRightRadius: 5
            }, function(){
-               bar.fadeIn("slow");
-               close.fadeIn("slow");
+               resumeNav.fadeIn("slow");
+               closeResume.fadeIn("slow");
                resumeContent.fadeIn("slow");
                iconLock = false;
            });
@@ -312,8 +310,8 @@ $(window).on("load", function(){
         });
     }
     function resumeCollapse(){
-        bar.fadeOut("slow");
-        close.fadeOut("slow");
+        resumeNav.fadeOut("slow");
+        closeResume.fadeOut("slow");
         resumeContent.fadeOut("slow", function(){
             resumeBox.animate({
                 height: '50px',
@@ -343,25 +341,37 @@ $(window).on("load", function(){
                 left: '70px',
                 height: '300px',
                 width: '300px',
-                top: '100px'
+                top: '100px',
+                borderTopLeftRadius: 5,
+                borderTopRightRadius: 5,
+                borderBottomLeftRadius: 5,
+                borderBottomRightRadius: 5
             }, function(){
+                contactNav.fadeIn("slow");
+                closeContact.fadeIn("slow");
+                contactContent.fadeIn("slow");
                 iconLock = false;
             });
         });
     }
     function contactCollapse(){
-        bar.fadeOut("slow");
-        close.fadeOut("slow");
-        contactBox.animate({
-            height: '50px',
-            width: '50px',
-            left: '10px',
-            top: '270px'
-        }, function(){
-            contactIcon.fadeIn("slow");
-            terminalBox.fadeIn("slow");
-            resumeBox.fadeIn("slow");
-            iconLock = false;
+        contactNav.fadeOut("slow");
+        closeContact.fadeOut("slow", function(){
+            contactBox.animate({
+                height: '50px',
+                width: '50px',
+                left: '10px',
+                top: '270px',
+                borderTopLeftRadius: 50,
+                borderTopRightRadius: 50,
+                borderBottomLeftRadius: 50,
+                borderBottomRightRadius: 50
+            }, function(){
+                contactIcon.fadeIn("slow");
+                terminalBox.fadeIn("slow");
+                resumeBox.fadeIn("slow");
+                iconLock = false;
+            });
         });
     }
 
