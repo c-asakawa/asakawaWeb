@@ -12,23 +12,33 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/buttons.css">
+        <link rel="stylesheet" href="css/preLoad.css">
+
+
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
         <script src="js/animate.js"></script>
+        <script src="js/preLoad.js"></script>
         <script src="js/main.js"></script>
         <script src="js/typed.js"></script>
+
+
 
     </head>
     <body>
     <div id="overlay"></div>
     <div ng-app="">
 
-
-
-        <ul id="introBox" >
-            <li id="introNav">&ensp;Terminal</li>
-            <li class="closeButton navButton"></li>
+        <ul id="terminalBox" class="icon terminalText" >
+            <li class="navBarSmall">&ensp;Terminal</li>
+            <li id="closeTerminal" class="closeButton navButton"></li>
 
             <li id="terminalContent">
                 <a id="output1">
@@ -39,34 +49,119 @@
                     &ensp;I'm a software developer.         <br>
                 </a>
                 <a id="output2">
-                    &ensp;this is some more output <br>
+                    <span style="color:white">&ensp;chris@asakawa :: ~</span>
+                    <span style="color:greenyellow ">$</span>
+                    <span style="color:white">./welcome</span><br>
+                    <br>
+                    &ensp;---------------------------------- <br>
+                    &ensp;|&ensp;&ensp;Welcome! This is my portfolio&ensp;&ensp;| <br>
+                    &ensp;---------------------------------- <br>
                 </a>
-                <span style="color:white">&ensp;chris@asakawa :: ~</span>
-                <span style="color:greenyellow ">$</span>
+                <a id="output3">&ensp;This portfolio contains: <br></a>
+                <a id="output4">&ensp;&ensp; - Academic Achievements <br></a>
+                <a id="output5">&ensp;&ensp; - Freelance Work <br></a>
+                <a id="output6">&ensp;&ensp; - Personal Projects <br></a>
+                <a id="output7">&ensp;&ensp; - Open Source Projects <br><br></a>
+
+
+                <a id="inputLine">
+                    <span style="color:white">&ensp;chris@asakawa :: ~</span>
+                    <span style="color:greenyellow ">$</span>
+                </a>
                 <a id="terminalInput"></a>
             </li>
-  <!--              <form name="inputField">
-                    &ensp;>-->
-                    <!--<input id="terminalInput" type="text" ng-model="input">-->
-                    <!--<h1>You entered: {{input}}</h1>-->
-              <!--  </form>-->
             <li id="terminalIcon"></li>
         </ul>
 
-        <ul id="mainContent" class="container">
-            <li id="upButton" class="scrollButton"></li>
-                <li id="profilePic"></li>
-                <li id="profileBio">
-                    <p>
-                        this is some content about myself, there should be a good amount of
-                        words here to fill in this div
-                    </p>
-                </li>
+        <ul id="resumeBox" class="icon" >
+            <li id="resumeIcon"></li>
+            <li class="navBarSmall">&ensp;Resume</li>
+            <li id="closeResume" class="closeButton navButton"></li>
+
+            <li id="resumeContent">
+            <embed src="../files/resume.pdf" width="100%" height="95%">
+            </li>
+        </ul>
+
+        <ul id="contactBox" class="icon" >
+            <li id="contactIcon"></li>
+        </ul>
+
+
+
+        <ul id="mainContent" class="container-fluid">
+            <li class="row scrollButton" id="upButton"></li>
+            <li class="row">
+                <div id="profileBio" class="col-sm-7 text-center">
+                    bio about myself. programmer, nerd, web, IoT, cloud computing
+                    etc...
+                </div>
+                <div id="profilePic" class="col-sm-4 center-block"></div>
+                <div class="col-sm-1 center-block">
+                    <div id="linkedIn" class="socialButton smallShadow" ></div>
+                    <div id="gitHub" class="socialButton smallShadow" ></div>
+                    <div id="faceBook" class="socialButton smallShadow" ></div>
+                </div>
+
+            </li>
+            <li class="row">
+                <div class="tile col-sm-4 center-block">
+                    <h4>School</h4>
+                    <div id="tile_1">
+
+                    </div>
+                </div>
+                <div class="tile col-sm-4 center-block">
+                    <h4>Freelance</h4>
+                    <div id="tile_2"></div>
+                </div>
+                <div class="tile col-sm-4 center-block">
+                    <h4>Projects</h4>
+                    <div id="tile_3"></div>
+                </div>
+            </li>
         </ul>
 
     </div>
+<!--        <div id="mainContent" class="container-fluid">
+            <div class="row">
+                <div id="upButton" class="scrollButton"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8"></div>
+                    <div id="profileBio">
+                    <p>
+                        this is some content about myself, there should be a good amount of
+                        words here to fill in this div his is some content about myself, there
+                        should be a good amount of words here to fill in this div
+                    </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div id="profilePic"></div>
+                </div>
+            </div>-->
 
-        <script src="js/plugins.js"></script>
+
+    <!--
+        Loading screen overlay.
+        pre-loading button icons to fix image flickering
+    -->
+    <div class="se-pre-con"></div>
+    <div id="preload-01"></div>
+    <div id="preload-02"></div>
+    <div id="preload-03"></div>
+    <div id="preload-04"></div>
+    <div id="preload-05"></div>
+    <div id="preload-06"></div>
+    <div id="preload-07"></div>
+    <div id="preload-08"></div>
+    <div id="preload-09"></div>
+    <div id="preload-10"></div>
+    <embed src="../files/resume.pdf" width="0" height="0">
+
+
+    <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
