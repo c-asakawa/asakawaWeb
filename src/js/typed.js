@@ -336,6 +336,10 @@
             }
             // Send the callback
             self.options.resetCallback();
+        },
+        removeCursor: function() {
+            this.cursor.remove();
+            return true;
         }
 
     };
@@ -355,7 +359,7 @@
         strings: ["These are the default values...", "You know what you should do?", "Use your own!", "Have a great day!"],
         stringsElement: null,
         // typing speed
-        typeSpeed: 50,
+        typeSpeed: 100,
         // time before typing starts
         startDelay: 0,
         // backspacing speed

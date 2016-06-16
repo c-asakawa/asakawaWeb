@@ -1,0 +1,54 @@
+
+/* small close button */
+.closeButton{
+    background: url("../img/closeButton.png") 0 0 no-repeat;
+}
+.closeButton:active {
+    background: url("../img/closeButton_active.png") 0 0 no-repeat;
+}
+.closeButton:hover{
+    background: url("../img/closeButton_hover.png") 0 0 no-repeat;
+}
+
+
+/* social media buttons */
+.socialButton {
+    position: relative;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    -webkit-transform: translateZ(0);
+}
+#linkedIn {
+    margin-top: 40px;
+    background: url("../img/socialButtons/linkedin.png") no-repeat;
+}
+#linkedIn:hover {
+    background: url("../img/socialButtons/linkedin_hover.png") no-repeat;
+}
+#linkedIn:active {
+    background: url("../img/socialButtons/linkedin_active.png") no-repeat;
+}
+#gitHub {
+    margin-top: 10px;
+    background: url("../img/socialButtons/github.png") no-repeat;
+}
+#gitHub:hover {
+    background: url("../img/socialButtons/github_hover.png") no-repeat;
+}
+#gitHub:active {
+    background: url("../img/socialButtons/github_active.png") no-repeat;
+}
+#faceBook {
+    margin-top: 10px;
+    background: url("../img/socialButtons/facebook.png") no-repeat;
+}
+#faceBook:hover {
+    background: url("../img/socialButtons/facebook_hover.png") no-repeat;
+}
+#faceBook:active {
+    background: url("../img/socialButtons/facebook_active.png") no-repeat;
+}

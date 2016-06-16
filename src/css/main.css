@@ -38,11 +38,11 @@ ul {
     top: 0;
     opacity: .2;
 }
-#introBox {
+
+.icon {
     position: absolute;
     width: 50px;
     height: 50px;
-    top: 10px;
     left: 10px;
     background-color: black;
     color: white;
@@ -51,35 +51,53 @@ ul {
         0 0 0 1px #3d3d3d,
         0 0 0 2px #717171;
 
-    /*border: solid 1px #717171;
-*/
+    border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+#terminalBox { top: 150px; }
+#resumeBox   { top: 210px; }
+#contactBox  { top: 270px; }
+
+#resumeContent{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 26px;
+}
+.terminalText{
     font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
     font-size: 14px;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     line-height: 20px;
-
-    opacity: 0.9;
-    filter: alpha(opacity=90); /* For IE8 and earlier */
-
-    border-radius: 50px 50px 50px 50px;
-    -moz-border-radius: 50px 50px 50px 50px;
-    -webkit-border-radius: 50px 50px 50px 50px;
-
 }
 #terminalIcon {
     background: url('../img/terminal.png') no-repeat;
-    position: absolute;
     height: 100%;
     width: 100%;
 }
-#introNav {
+#resumeIcon {
+    height: 100%;
+    width: 100%;
+}
+#contactIcon {
+     height: 100%;
+     width: 100%;
+}
+
+.navBarSmall {
     position: absolute;
     background-color: #222222;
     width: 100%;
     height: 26px;
     display: none;
+
 
     background: rgba(156,156,156,1);
     background: -moz-linear-gradient(top, rgba(156,156,156,1) 0%, rgba(61,61,61,1) 100%);
@@ -111,16 +129,7 @@ ul {
     -moz-border-radius: 20px 20px 20px 20px;
     -webkit-border-radius: 20px 20px 20px 20px;
 }
-.closeButton{
-    background: url("../img/closeButton.png") 0 0 no-repeat;
-}
-.closeButton:active {
-    background: url("../img/closeButton_active.png") 0 0 no-repeat;
 
-}
-.closeButton:hover{
-    background: url("../img/closeButton_hover.png") 0 0 no-repeat;
-}
 #terminalContent {
     display: none;
     position: absolute;
@@ -144,7 +153,7 @@ ul {
 #mainContent {
     position: absolute;
     background-color: white;
-    width: 80%;
+    width: 100%;
     height: 70px;
     bottom: 0;
     left: 0;
@@ -154,8 +163,16 @@ ul {
 }
 
 
+.smallShadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(113, 113, 113, 0.75);
+    -moz-box-shadow: 0 0 10px 0 rgba(113, 113, 113, 0.75);
+    box-shadow: 0 0 10px 0 rgba(113, 113, 113, 0.75);
+}
+
+
+
 .scrollButton {
-    position: absolute;
+    position: relative;
     background-color: black;
     width: 60px;
     height: 60px;
@@ -169,14 +186,11 @@ ul {
 }
 
 #profilePic {
-
     position: relative;
     background-image: url("../img/profilePic.jpg");
-    width: 200px;
     height: 200px;
-    top: 100px;
-    left: 100%;
-    margin-left: -230px;
+    width: 200px;
+    margin-top: 30px;
 
 
     border-radius: 50px  50px  50px  50px ;
@@ -188,14 +202,23 @@ ul {
     box-shadow: 0 0 30px 0 rgba(28,28,28,0.75);
 
 }
+.tile {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+#tile_1, #tile_2, #tile_3 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
 
 #profileBio {
     position: relative;
-    width: 400px;
-    height: 200px;
-    left: 100%;
-    margin-left: -660px;
-
+    margin-top: 30px;
 }
 
 
@@ -205,6 +228,12 @@ ul {
 }
 
 #output2 {
+    color: cornflowerblue;
+
+    display: none;
+}
+
+#output3, #output4, #output5, #output6, #output7 {
     display: none;
 }
 
@@ -212,6 +241,19 @@ ul {
     position: relative;
 
 }
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/preloader.gif') center no-repeat #fff;
+}
+
 
 .typed-cursor {
     opacity: 1;
@@ -485,10 +527,20 @@ textarea {
         page-break-after: avoid;
     }
 }
-/*
-@media screen and (max-width: 700px) {
-    #introBox {
-        width: 90%;
-        height: 80%;
+@media screen and (max-width: 768px) {
+
+    #linkedIn {
+        margin-left: 50%;
+        left: -60px;
     }
-}*/
+    #gitHub {
+        margin-left: 50%;
+        margin-top: -40px;
+    }
+    #faceBook {
+        margin-left: 50%;
+        left: 60px;
+        margin-top: -40px;
+    }
+
+}
