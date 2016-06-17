@@ -1,3 +1,22 @@
+/* preload screen && loader */
+.no-js #loader { display: none;  }
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/preloader.gif') center no-repeat #fff;
+}
+
+/* images to be pre-loaded on the screen */
 #preload-01 { background: url('../img/socialButtons/facebook_hover.png') no-repeat -9999px -9999px; }
 #preload-02 { background: url('../img/socialButtons/facebook_active.png') no-repeat -9999px -9999px; }
 #preload-03 { background: url('../img/socialButtons/linkedin_hover.png') no-repeat -9999px -9999px; }
@@ -8,7 +27,6 @@
 #preload-08 { background: url('../img/closeButton_active.png') no-repeat -9999px -9999px; }
 #preload-09 { background: url('../img/closeButton_hover.png') no-repeat -9999px -9999px; }
 #preload-10 { background: url('../img/closeButton_active.png') no-repeat -9999px -9999px; }
-
 #preload-11 { background: url('../img/icons/terminal_hover.png') no-repeat -9999px -9999px; }
 #preload-12 { background: url('../img/icons/terminal_active.png') no-repeat -9999px -9999px; }
 #preload-13 { background: url('../img/icons/resume_active.png') no-repeat -9999px -9999px; }

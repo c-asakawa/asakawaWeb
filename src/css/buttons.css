@@ -1,4 +1,23 @@
 
+/* small circle button that fits in the nav bar */
+.navButton {
+    position: relative;
+    float: right;
+    display: none;
+    text-align: center;
+
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    margin-right: 5px;
+    background-color: white;
+    color: black;
+
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+}
+
 /* small close button */
 .closeButton{
     background: url("../img/closeButton.png") 0 0 no-repeat;
@@ -9,7 +28,6 @@
 .closeButton:hover{
     background: url("../img/closeButton_hover.png") 0 0 no-repeat;
 }
-
 
 /* social media buttons */
 .socialButton {
