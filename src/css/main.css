@@ -48,6 +48,17 @@ ul {
     opacity: .3;
 }
 
+#mainNav{
+    width: 100%;
+    height: 20px;
+    background-color: black;
+}
+#clock{
+    text-align: right;
+    margin-right: 10px;
+    color: white;
+}
+
 .icon {
     position: absolute;
     width: 50px;

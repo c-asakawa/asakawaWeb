@@ -29,14 +29,18 @@
         <script src="js/preLoad.js"></script>
         <script src="js/main.js"></script>
         <script src="js/typed.js"></script>
+        <script src="js/time.js"></script>
 
 
 
     </head>
-    <body>
+    <body onload="startTime()">
     <div class="overlay"></div>
     <div id="overlay"></div>
     <div ng-app="">
+        <ul id="mainNav">
+            <li id="clock"></li>
+        </ul>
 
         <ul id="terminalBox" class="icon terminalText" >
             <li id="navTerminal" class="navBarSmall">&ensp;Terminal</li>
