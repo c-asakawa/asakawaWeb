@@ -59,7 +59,7 @@ $(window).on("load", function(){
      *
      * @type {boolean}
      */
-    var iconLock = false;
+    var animationLock = false;
 
 
     //main();
@@ -109,8 +109,8 @@ $(window).on("load", function(){
      */
     function clickButton(element){
 
-        if(!iconLock){
-            iconLock = true; //take the lock
+        if(!animationLock){
+            animationLock = true; //take the lock
             switch (element){
                 case closeTerminal: terminalCollapse(); break;
                 case closeResume:   resumeCollapse();   break;
@@ -124,7 +124,6 @@ $(window).on("load", function(){
                 case phoneIcon:     phoneExpand();      break;
                 default: break;
             }
-
         }
     }
 
@@ -180,7 +179,7 @@ $(window).on("load", function(){
      * @param element
      */
     function offHover(element){
-        if(!iconLock && element.width() == 50)
+        if(!animationLock && element.width() == 50)
             element.animate({left: "10px"}, "fast");
     }
 
@@ -292,7 +291,7 @@ $(window).on("load", function(){
             }, function(){
                 terminalIcon.fadeIn("slow");
                 showOtherIcons(terminalBox);
-                iconLock = false;
+                animationLock = false;
             });
         });
     }
@@ -335,7 +334,7 @@ $(window).on("load", function(){
                 terminal.fadeIn("slow");
                 overlay.fadeIn("slow");
                 typeAnimate();
-                iconLock = false;
+                animationLock = false;
             });
         });
     }
@@ -359,7 +358,7 @@ $(window).on("load", function(){
                closeResume.fadeIn("slow");
                resumeContent.fadeIn("slow");
 
-               iconLock = false;
+               animationLock = false;
            });
 
         });
@@ -381,7 +380,7 @@ $(window).on("load", function(){
                 resumeIcon.fadeIn("slow");
                 showOtherIcons(resumeBox);
                 content.fadeIn("slow");
-                iconLock = false;
+                animationLock = false;
             });
         });
 
@@ -403,7 +402,7 @@ $(window).on("load", function(){
                 emailNav.fadeIn("slow");
                 closeEmail.fadeIn("slow");
                 contactContent.fadeIn("slow");
-                iconLock = false;
+                animationLock = false;
             });
         });
     }
@@ -422,7 +421,7 @@ $(window).on("load", function(){
             }, function(){
                 emailIcon.fadeIn("slow");
                 showOtherIcons(emailBox);
-                iconLock = false;
+                animationLock = false;
             });
         });
     }
