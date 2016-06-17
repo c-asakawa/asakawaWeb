@@ -69,7 +69,9 @@ ul {
 }
 #terminalBox { top: 150px; }
 #resumeBox   { top: 210px; }
-#contactBox  { top: 270px; }
+#emailBox  { top: 270px; }
+#messageBox { top: 330px; }
+#phoneBox { top: 390px; }
 
 #resumeContent{
     display: none;
@@ -86,18 +88,68 @@ ul {
     font-weight: 400;
     line-height: 20px;
 }
+
 #terminalIcon {
     background: url('../img/icons/terminal.png') no-repeat;
     height: 100%;
     width: 100%;
 }
+#terminalIcon:hover{
+    background: url('../img/icons/terminal_hover.png') no-repeat;
+}
+#terminalIcon:active{
+    background: url('../img/icons/terminal_active.png') no-repeat;
+}
+
+
 #resumeIcon {
+    background: url('../img/icons/resume.png') no-repeat;
     height: 100%;
     width: 100%;
 }
-#contactIcon {
-     height: 100%;
-     width: 100%;
+#resumeIcon:hover{
+    background: url('../img/icons/resume_hover.png') no-repeat;
+}
+#resumeIcon:active{
+    background: url('../img/icons/resume_active.png') no-repeat;
+}
+
+
+#emailIcon {
+    background: url('../img/icons/email.png') no-repeat;
+    height: 100%;
+    width: 100%;
+}
+#emailIcon:hover{
+    background: url('../img/icons/email_hover.png') no-repeat;
+}
+#emailIcon:active{
+    background: url('../img/icons/email_active.png') no-repeat;
+}
+
+
+#messageIcon {
+    background: url('../img/icons/message.png') no-repeat;
+    height: 100%;
+    width: 100%;
+}
+#messageIcon:hover{
+    background: url('../img/icons/message_hover.png') no-repeat;
+}
+#messageIcon:active{
+    background: url('../img/icons/message_active.png') no-repeat;
+}
+
+#phoneIcon {
+    background: url('../img/icons/phone.png') no-repeat;
+    height: 100%;
+    width: 100%;
+}
+#phoneIcon:hover{
+    background: url('../img/icons/phone_hover.png') no-repeat;
+}
+#phoneIcon:active{
+    background: url('../img/icons/phone_active.png') no-repeat;
 }
 
 .navBarSmall {

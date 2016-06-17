@@ -13,22 +13,34 @@ $(window).on("load", function(){
      */
     var body = $("body");
     var overlay = $(".overlay");
-    var close = $(".closeButton");
+
     var closeTerminal = $("#closeTerminal");
     var closeResume = $("#closeResume");
-    var closeContact = $("#closeContact");
-
-    var bar = $(".navBarSmall");
+    var closeEmail = $("#closeEmail");
+    var closeMessage = $("#closeMessage");
+    var closePhone = $("#closePhone");
 
     var terminalNav = $("#navTerminal");
     var resumeNav =  $("#navResume");
-    var contactNav = $("#navContact");
+    var emailNav = $("#navEmail");
+    var messageNav = $("#navMessage");
+    var phoneNav = $("#navPhone");
 
     var terminalBox = $("#terminalBox");
+    var resumeBox = $('#resumeBox');
+    var emailBox = $('#emailBox');
+    var messageBox = $('#messageBox');
+    var phoneBox = $('#phoneBox');
+
+
+    var resumeContent = $('#resumeContent');
+    var contactContent = $('#contactContent');
 
     var terminalIcon = $("#terminalIcon");
     var resumeIcon = $("#resumeIcon");
-    var contactIcon = $("#contactIcon");
+    var emailIcon = $("#emailIcon");
+    var messageIcon = $("#messageIcon");
+    var phoneIcon = $("#phoneIcon");
 
     var terminal = $("#terminalContent");
     var up = $("#upButton");
@@ -40,10 +52,7 @@ $(window).on("load", function(){
     var tile2 = $('#tile_2');
     var tile3 = $('#tile_3');
 
-    var resumeBox = $('#resumeBox');
-    var contactBox = $('#contactBox');
-    var resumeContent = $('#resumeContent');
-    var contactContent = $('#contactContent');
+
 
     /**
      * lock used to only allow one icon animation to occur at a time.
@@ -65,10 +74,10 @@ $(window).on("load", function(){
      */
     closeTerminal.click(function(){ clickButton(terminalCollapse()); });
     closeResume.click(function(){ clickButton(resumeCollapse()); });
-    closeContact.click(function(){ clickButton(contactCollapse()); });
+    closeEmail.click(function(){ clickButton(emailCollapse()); });
     terminalIcon.click(function(){ clickButton(terminalExpand()); });
     resumeIcon.click(function(){ clickButton(resumeExpand()); });
-    contactIcon.click(function(){ clickButton(contactExpand()); });
+    emailIcon.click(function(){ clickButton(emailExpand()); });
 
     up.click(function() {
         if (content.height() < 71) {
@@ -118,11 +127,22 @@ $(window).on("load", function(){
     }, function() {
         offHover(resumeBox);
     });
-    contactIcon.hover(function(){
-        onHover(contactBox);
+    emailIcon.hover(function(){
+        onHover(emailBox);
     }, function() {
-        offHover(contactBox);
+        offHover(emailBox);
     });
+    messageIcon.hover(function(){
+        onHover(messageBox);
+    }, function() {
+        offHover(messageBox);
+    });
+    phoneIcon.hover(function(){
+        onHover(phoneBox);
+    }, function() {
+        offHover(phoneBox);
+    });
+
 
     /**
      * Icon on hover anumation
@@ -147,7 +167,7 @@ $(window).on("load", function(){
     function closeAll() {
         terminalCollapse();
         resumeCollapse();
-        contactCollapse();
+        emailCollapse();
         scrollDown();
     }
 
@@ -249,7 +269,7 @@ $(window).on("load", function(){
             }, function(){
                 terminalIcon.fadeIn("slow");
                 resumeBox.fadeIn("slow");
-                contactBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
                 iconLock = false;
             });
         });
@@ -275,7 +295,7 @@ $(window).on("load", function(){
             t = '5%';
         }
         resumeBox.fadeOut("slow");
-        contactBox.fadeOut("slow");
+        emailBox.fadeOut("slow");
         terminalIcon.fadeOut("slow", function(){
             terminalBox.animate({
                 height: h,
@@ -302,7 +322,7 @@ $(window).on("load", function(){
 
     function resumeExpand(){
         terminalBox.fadeOut("slow");
-        contactBox.fadeOut("slow");
+        emailBox.fadeOut("slow");
         content.fadeOut("slow");
         resumeIcon.fadeOut("slow", function(){
            resumeBox.animate({
@@ -340,7 +360,7 @@ $(window).on("load", function(){
             }, function(){
                 resumeIcon.fadeIn("slow");
                 terminalBox.fadeIn("slow");
-                contactBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
                 content.fadeIn("slow");
                 iconLock = false;
             });
@@ -348,11 +368,11 @@ $(window).on("load", function(){
 
     }
 
-    function contactExpand(){
+    function emailExpand(){
         terminalBox.fadeOut("slow");
         resumeBox.fadeOut("slow");
-        contactIcon.fadeOut("slow", function(){
-            contactBox.animate({
+        emailIcon.fadeOut("slow", function(){
+            emailBox.animate({
                 left: '70px',
                 height: '300px',
                 width: '300px',
@@ -362,17 +382,17 @@ $(window).on("load", function(){
                 borderBottomLeftRadius: 5,
                 borderBottomRightRadius: 5
             }, function(){
-                contactNav.fadeIn("slow");
-                closeContact.fadeIn("slow");
+                emailNav.fadeIn("slow");
+                closeEmail.fadeIn("slow");
                 contactContent.fadeIn("slow");
                 iconLock = false;
             });
         });
     }
-    function contactCollapse(){
-        contactNav.fadeOut("slow");
-        closeContact.fadeOut("slow", function(){
-            contactBox.animate({
+    function emailCollapse(){
+        emailNav.fadeOut("slow");
+        closeEmail.fadeOut("slow", function(){
+            emailBox.animate({
                 height: '50px',
                 width: '50px',
                 left: '10px',
@@ -382,7 +402,7 @@ $(window).on("load", function(){
                 borderBottomLeftRadius: 50,
                 borderBottomRightRadius: 50
             }, function(){
-                contactIcon.fadeIn("slow");
+                emailIcon.fadeIn("slow");
                 terminalBox.fadeIn("slow");
                 resumeBox.fadeIn("slow");
                 iconLock = false;
