@@ -268,8 +268,7 @@ $(window).on("load", function(){
                 borderBottomRightRadius: 50
             }, function(){
                 terminalIcon.fadeIn("slow");
-                resumeBox.fadeIn("slow");
-                emailBox.fadeIn("slow");
+                showOtherIcons(terminalBox);
                 iconLock = false;
             });
         });
@@ -288,14 +287,13 @@ $(window).on("load", function(){
             l = '25%';
             t = '10%';
         }
-        else {
+        else { //on mobile device
             h = '70%';
             w = '90%';
             l = '5%';
             t = '5%';
         }
-        resumeBox.fadeOut("slow");
-        emailBox.fadeOut("slow");
+        hideOtherIcons(terminalBox);
         terminalIcon.fadeOut("slow", function(){
             terminalBox.animate({
                 height: h,
@@ -321,8 +319,7 @@ $(window).on("load", function(){
 
 
     function resumeExpand(){
-        terminalBox.fadeOut("slow");
-        emailBox.fadeOut("slow");
+        hideOtherIcons(resumeBox);
         content.fadeOut("slow");
         resumeIcon.fadeOut("slow", function(){
            resumeBox.animate({
@@ -359,8 +356,7 @@ $(window).on("load", function(){
                 borderBottomRightRadius: 50
             }, function(){
                 resumeIcon.fadeIn("slow");
-                terminalBox.fadeIn("slow");
-                emailBox.fadeIn("slow");
+                showOtherIcons(resumeBox);
                 content.fadeIn("slow");
                 iconLock = false;
             });
@@ -369,8 +365,7 @@ $(window).on("load", function(){
     }
 
     function emailExpand(){
-        terminalBox.fadeOut("slow");
-        resumeBox.fadeOut("slow");
+        hideOtherIcons(emailBox);
         emailIcon.fadeOut("slow", function(){
             emailBox.animate({
                 left: '70px',
@@ -403,12 +398,84 @@ $(window).on("load", function(){
                 borderBottomRightRadius: 50
             }, function(){
                 emailIcon.fadeIn("slow");
-                terminalBox.fadeIn("slow");
-                resumeBox.fadeIn("slow");
+                showOtherIcons(emailBox);
                 iconLock = false;
             });
         });
     }
+
+    function hideOtherIcons(element, callback){
+        switch(element){
+            case terminalBox:
+                resumeBox.fadeOut("slow");
+                emailBox.fadeOut("slow");
+                messageBox.fadeOut("slow");
+                phoneBox.fadeOut("slow");
+                break;
+            case resumeBox:
+                terminalBox.fadeOut("slow");
+                emailBox.fadeOut("slow");
+                messageBox.fadeOut("slow");
+                phoneBox.fadeOut("slow");
+                break;
+            case emailBox:
+                terminalBox.fadeOut("slow");
+                resumeBox.fadeOut("slow");
+                messageBox.fadeOut("slow");
+                phoneBox.fadeOut("slow");
+                break;
+            case messageBox:
+                terminalBox.fadeOut("slow");
+                resumeBox.fadeOut("slow");
+                emailBox.fadeOut("slow");
+                phoneBox.fadeOut("slow");
+                break;
+            case phoneBox:
+                terminalBox.fadeOut("slow");
+                resumeBox.fadeOut("slow");
+                emailBox.fadeOut("slow");
+                messageBox.fadeOut("slow");
+                break;
+        }
+    }
+
+
+    function showOtherIcons(element, callback){
+        switch(element){
+            case terminalBox:
+                resumeBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
+                messageBox.fadeIn("slow");
+                phoneBox.fadeIn("slow");
+                break;
+            case resumeBox:
+                terminalBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
+                messageBox.fadeIn("slow");
+                phoneBox.fadeIn("slow");
+                break;
+            case emailBox:
+                terminalBox.fadeIn("slow");
+                resumeBox.fadeIn("slow");
+                messageBox.fadeIn("slow");
+                phoneBox.fadeIn("slow");
+                break;
+            case messageBox:
+                terminalBox.fadeIn("slow");
+                resumeBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
+                phoneBox.fadeIn("slow");
+                break;
+            case phoneBox:
+                terminalBox.fadeIn("slow");
+                resumeBox.fadeIn("slow");
+                emailBox.fadeIn("slow");
+                messageBox.fadeIn("slow");
+                break;
+        }
+    }
+
+
 
     function tileExpand(element){
         element.animate({
