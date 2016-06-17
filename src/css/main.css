@@ -52,6 +52,7 @@ ul {
     width: 100%;
     height: 20px;
     background-color: black;
+    opacity: 0.8;
 }
 #clock{
     text-align: right;
@@ -59,25 +60,7 @@ ul {
     color: white;
 }
 
-.icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    left: 10px;
-    background-color: white;
-    color: white;
-
-    box-shadow:
-        0 0 0 1px #3d3d3d,
-        0 0 0 2px #717171;
-
-    border-radius: 50px 50px 50px 50px;
-    -moz-border-radius: 50px 50px 50px 50px;
-    -webkit-border-radius: 50px 50px 50px 50px;
-
-    opacity: 0.9;
-    filter: alpha(opacity=90); /* For IE8 and earlier */
-}
+/* icon positions */
 #terminalBox { top: 150px; }
 #resumeBox   { top: 210px; }
 #emailBox  { top: 270px; }
@@ -100,68 +83,7 @@ ul {
     line-height: 20px;
 }
 
-#terminalIcon {
-    background: url('../img/icons/terminal.png') no-repeat;
-    height: 100%;
-    width: 100%;
-}
-#terminalIcon:hover{
-    background: url('../img/icons/terminal_hover.png') no-repeat;
-}
-#terminalIcon:active{
-    background: url('../img/icons/terminal_active.png') no-repeat;
-}
 
-
-#resumeIcon {
-    background: url('../img/icons/resume.png') no-repeat;
-    height: 100%;
-    width: 100%;
-}
-#resumeIcon:hover{
-    background: url('../img/icons/resume_hover.png') no-repeat;
-}
-#resumeIcon:active{
-    background: url('../img/icons/resume_active.png') no-repeat;
-}
-
-
-#emailIcon {
-    background: url('../img/icons/email.png') no-repeat;
-    height: 100%;
-    width: 100%;
-}
-#emailIcon:hover{
-    background: url('../img/icons/email_hover.png') no-repeat;
-}
-#emailIcon:active{
-    background: url('../img/icons/email_active.png') no-repeat;
-}
-
-
-#messageIcon {
-    background: url('../img/icons/message.png') no-repeat;
-    height: 100%;
-    width: 100%;
-}
-#messageIcon:hover{
-    background: url('../img/icons/message_hover.png') no-repeat;
-}
-#messageIcon:active{
-    background: url('../img/icons/message_active.png') no-repeat;
-}
-
-#phoneIcon {
-    background: url('../img/icons/phone.png') no-repeat;
-    height: 100%;
-    width: 100%;
-}
-#phoneIcon:hover{
-    background: url('../img/icons/phone_hover.png') no-repeat;
-}
-#phoneIcon:active{
-    background: url('../img/icons/phone_active.png') no-repeat;
-}
 
 .navBarSmall {
     position: absolute;
@@ -302,15 +224,11 @@ ul {
     margin-top: 30px;
 }
 
-
+#terminalInput { position: relative; }
+/* simulated terminal output */
 #output1, #output2, #output3, #output4,
-#output5, #output6, #output7 {
-    display: none;
-}
+#output5, #output6, #output7 {  display: none; }
 
-#terminalInput {
-    position: relative;
-}
 
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
