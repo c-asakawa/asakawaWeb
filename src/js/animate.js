@@ -72,12 +72,16 @@ $(window).on("load", function(){
     /**
      * Click events
      */
-    closeTerminal.click(function(){ clickButton(terminalCollapse()); });
-    closeResume.click(function(){ clickButton(resumeCollapse()); });
-    closeEmail.click(function(){ clickButton(emailCollapse()); });
-    terminalIcon.click(function(){ clickButton(terminalExpand()); });
-    resumeIcon.click(function(){ clickButton(resumeExpand()); });
-    emailIcon.click(function(){ clickButton(emailExpand()); });
+    closeTerminal.click(function(){ clickButton(closeTerminal); });
+    closeResume.click(function(){ clickButton(closeResume); });
+    closeEmail.click(function(){ clickButton(closeEmail); });
+    closeMessage.click(function(){ clickButton(closeMessage); });
+    closePhone.click(function(){ clickButton(closePhone); });
+    terminalIcon.click(function(){ clickButton(terminalIcon); });
+    resumeIcon.click(function(){ clickButton(resumeIcon); });
+    emailIcon.click(function(){ clickButton(emailIcon); });
+    messageIcon.click(function(){ clickButton(messageIcon); });
+    phoneIcon.click(function(){ clickButton(phoneIcon); });
 
     up.click(function() {
         if (content.height() < 71) {
@@ -97,11 +101,30 @@ $(window).on("load", function(){
 
     });
 
+    /**
+     * only proceed ot expand the element if the
+     * animationLock is free
+     *
+     * @param element
+     */
+    function clickButton(element){
 
-    function clickButton(func){
         if(!iconLock){
-            func();
-            iconLock = true;
+            iconLock = true; //take the lock
+            switch (element){
+                case closeTerminal: terminalCollapse(); break;
+                case closeResume:   resumeCollapse();   break;
+                case closeEmail:    emailCollapse();    break;
+                case closeMessage:  messageCollapse();  break;
+                case closePhone:    phoneCollapse();    break;
+                case terminalIcon:  terminalExpand();     break;
+                case resumeIcon:    resumeExpand();     break;
+                case emailIcon:     emailExpand();      break;
+                case messageIcon:   messageExpand();    break;
+                case phoneIcon:     phoneExpand();      break;
+                default: break;
+            }
+
         }
     }
 
@@ -403,6 +426,12 @@ $(window).on("load", function(){
             });
         });
     }
+
+    function messageExpand(){}
+    function messageCollapse(){}
+
+    function phoneExpand(){}
+    function phoneCollapse(){}
 
     function hideOtherIcons(element, callback){
         switch(element){
