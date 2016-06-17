@@ -292,10 +292,10 @@ $(window).on("load", function(){
         content.fadeOut("slow");
         resumeIcon.fadeOut("slow", function(){
            resumeBox.animate({
-               height: '96%',
-               width: '96%',
-               left: '2%',
-               top: '2%',
+               height: '98%',
+               width: '98%',
+               left: '1%',
+               top: '1%',
                borderTopLeftRadius: 5,
                borderTopRightRadius: 5,
                borderBottomLeftRadius: 5,
