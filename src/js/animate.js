@@ -12,7 +12,7 @@ $(window).on("load", function(){
      * @type {*|jQuery|HTMLElement}
      */
     var body = $("body");
-    var overlay = $("#overlay");
+    var overlay = $(".overlay");
     var close = $(".closeButton");
     var closeTerminal = $("#closeTerminal");
     var closeResume = $("#closeResume");
@@ -77,6 +77,17 @@ $(window).on("load", function(){
         else
             scrollDown();
     });
+
+    tile1.click(function (){
+
+    });
+    tile2.click(function (){
+
+    });
+    tile3.click(function (){
+
+    });
+
 
     function clickButton(func){
         if(!iconLock){
@@ -226,6 +237,7 @@ $(window).on("load", function(){
         terminal.fadeOut("slow");
         terminalNav.fadeOut("slow", function(){
             terminalBox.animate({
+                backgroundColor: "whtie",
                 height: '50px',
                 width: '50px',
                 left: '10px',
@@ -273,7 +285,9 @@ $(window).on("load", function(){
                 borderTopLeftRadius: 5,
                 borderTopRightRadius: 5,
                 borderBottomLeftRadius: 5,
-                borderBottomRightRadius: 5
+                borderBottomRightRadius: 5,
+                backgroundColor: "black"
+
             }, function(){
                 terminalNav.fadeIn("slow");
                 closeTerminal.fadeIn("slow");
@@ -304,6 +318,7 @@ $(window).on("load", function(){
                resumeNav.fadeIn("slow");
                closeResume.fadeIn("slow");
                resumeContent.fadeIn("slow");
+
                iconLock = false;
            });
 
@@ -372,6 +387,12 @@ $(window).on("load", function(){
                 resumeBox.fadeIn("slow");
                 iconLock = false;
             });
+        });
+    }
+
+    function tileExpand(element){
+        element.animate({
+
         });
     }
 
