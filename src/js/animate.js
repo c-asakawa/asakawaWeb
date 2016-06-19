@@ -15,12 +15,15 @@ $(window).on("load", function(){
     var overlay = $(".overlay");
     var sideBar = $("#iconSideBar");
 
+
+    /* close buttons */
     var closeTerminal = $("#closeTerminal");
     var closeResume = $("#closeResume");
     var closeEmail = $("#closeEmail");
     var closeMessage = $("#closeMessage");
     var closePhone = $("#closePhone");
 
+    /* small nav bars */
     var terminalNav = $("#navTerminal");
     var resumeNav =  $("#navResume");
     var emailNav = $("#navEmail");
@@ -214,6 +217,8 @@ $(window).on("load", function(){
         terminalCollapse();
         resumeCollapse();
         emailCollapse();
+        messageCollapse();
+        phoneCollapse();
         scrollDown();
     }
 
@@ -456,7 +461,7 @@ $(window).on("load", function(){
         phoneIcon.fadeOut("slow", function(){
             phoneBox.animate({
                 left: left,
-                height: '220px',
+                height: '230px',
                 width: '240px',
                 top: '100px',
                 borderTopLeftRadius: 5,
@@ -473,6 +478,7 @@ $(window).on("load", function(){
     function phoneCollapse(){
 
         phoneNav.fadeOut("slow");
+        phoneContent.fadeOut("slow");
         closePhone.fadeOut("slow", function(){
             phoneBox.animate({
                 height: '50px',
