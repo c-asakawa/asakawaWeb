@@ -208,26 +208,32 @@ ul {
 }
 .tile {
     position: relative;
-    width: 200px;
+    width: 100%;
     height: 200px;
     margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 #tile_1, #tile_2, #tile_3 {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     background-color: blue;
 }
 
-.blueOverlay {
+.tileOverlay {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: darkblue;
-    opacity: .3;
+    top: 20px;
 }
+.PSUgreen {
+    background-color: #6A7F10;
+}
+
 
 #profileBio {
     position: relative;

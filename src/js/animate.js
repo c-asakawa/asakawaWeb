@@ -15,6 +15,8 @@ $(window).on("load", function(){
     var overlay = $(".overlay");
     var sideBar = $("#iconSideBar");
 
+    var schoolOverlay = $("#schoolOverlay");
+
 
     /* close buttons */
     var closeTerminal = $("#closeTerminal");
@@ -37,6 +39,7 @@ $(window).on("load", function(){
     var phoneBox = $('#phoneBox');
 
 
+    var mainContent = $('#mainContent');
     var resumeContent = $('#resumeContent');
     var contactContent = $('#contactContent');
     var phoneContent = $('#phoneContent');
@@ -97,7 +100,7 @@ $(window).on("load", function(){
     });
 
     tile1.click(function (){
-
+        tileExpand(schoolOverlay, tile1);
     });
     tile2.click(function (){
 
@@ -220,6 +223,7 @@ $(window).on("load", function(){
         messageCollapse();
         phoneCollapse();
         scrollDown();
+        tileCollapse(schoolOverlay);
     }
 
 
@@ -577,10 +581,11 @@ $(window).on("load", function(){
 
 
 
-    function tileExpand(element){
-        element.animate({
-
-        });
+    function tileExpand(overlay, element){
+        overlay.fadeIn("slow");
+    }
+    function tileCollapse(element){
+        element.fadeOut("slow");
     }
 
 });
