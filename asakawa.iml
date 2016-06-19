@@ -8,5 +8,6 @@
     <orderEntry type="library" name="jquery.flip" level="application" />
     <orderEntry type="library" name="jquery-2.1.4" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="asakawaWeb node_modules" level="project" />
   </component>
 </module>

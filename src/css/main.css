@@ -74,6 +74,15 @@ ul {
     height: 100%;
     top: 26px;
 }
+#phoneContent{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: black;
+    padding: 20px;
+}
 .terminalText{
     font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
     font-size: 14px;
@@ -106,6 +115,25 @@ ul {
     -moz-border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
 }
+
+#iconSideBar {
+    opacity: 0;
+    position: fixed;
+    background-color: black;
+    height: 100%;
+    width: 90px;
+    top: 0;
+    left: 0;
+
+    background: rgba(0,0,0,0.8);
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+}
+
 
 
 #terminalContent {

@@ -13,6 +13,7 @@ $(window).on("load", function(){
      */
     var body = $("body");
     var overlay = $(".overlay");
+    var sideBar = $("#iconSideBar");
 
     var closeTerminal = $("#closeTerminal");
     var closeResume = $("#closeResume");
@@ -35,6 +36,7 @@ $(window).on("load", function(){
 
     var resumeContent = $('#resumeContent');
     var contactContent = $('#contactContent');
+    var phoneContent = $('#phoneContent');
 
     var terminalIcon = $("#terminalIcon");
     var resumeIcon = $("#resumeIcon");
@@ -72,11 +74,11 @@ $(window).on("load", function(){
     /**
      * Click events
      */
-    closeTerminal.click(function(){ clickButton(closeTerminal); });
-    closeResume.click(function(){ clickButton(closeResume); });
-    closeEmail.click(function(){ clickButton(closeEmail); });
-    closeMessage.click(function(){ clickButton(closeMessage); });
-    closePhone.click(function(){ clickButton(closePhone); });
+    closeTerminal.click(function(){ terminalCollapse(); });
+    closeResume.click(function(){ resumeCollapse(); });
+    closeEmail.click(function(){ emailCollapse(); });
+    closeMessage.click(function(){ messageCollapse(); });
+    closePhone.click(function(){ phoneCollapse(); });
     terminalIcon.click(function(){ clickButton(terminalIcon); });
     resumeIcon.click(function(){ clickButton(resumeIcon); });
     emailIcon.click(function(){ clickButton(emailIcon); });
@@ -102,7 +104,7 @@ $(window).on("load", function(){
     });
 
     /**
-     * only proceed ot expand the element if the
+     * only proceed to expand the element if the
      * animationLock is free
      *
      * @param element
@@ -112,12 +114,7 @@ $(window).on("load", function(){
         if(!animationLock){
             animationLock = true; //take the lock
             switch (element){
-                case closeTerminal: terminalCollapse(); break;
-                case closeResume:   resumeCollapse();   break;
-                case closeEmail:    emailCollapse();    break;
-                case closeMessage:  messageCollapse();  break;
-                case closePhone:    phoneCollapse();    break;
-                case terminalIcon:  terminalExpand();     break;
+                case terminalIcon:  terminalExpand();   break;
                 case resumeIcon:    resumeExpand();     break;
                 case emailIcon:     emailExpand();      break;
                 case messageIcon:   messageExpand();    break;
@@ -140,37 +137,62 @@ $(window).on("load", function(){
      * on-hover events
      */
     terminalIcon.hover(function(){
-        onHover(terminalBox);
+        onHoverIcon(terminalBox);
     }, function() {
-        offHover(terminalBox);
+        offHoverIcon(terminalBox);
     });
     resumeIcon.hover(function(){
-        onHover(resumeBox);
+        onHoverIcon(resumeBox);
     }, function() {
-        offHover(resumeBox);
+        offHoverIcon(resumeBox);
     });
     emailIcon.hover(function(){
-        onHover(emailBox);
+        onHoverIcon(emailBox);
     }, function() {
-        offHover(emailBox);
+        offHoverIcon(emailBox);
     });
     messageIcon.hover(function(){
-        onHover(messageBox);
+        onHoverIcon(messageBox);
     }, function() {
-        offHover(messageBox);
+        offHoverIcon(messageBox);
     });
     phoneIcon.hover(function(){
-        onHover(phoneBox);
+        onHoverIcon(phoneBox);
     }, function() {
-        offHover(phoneBox);
+        offHoverIcon(phoneBox);
     });
+
+
+    var sideBarTimeout;
+    sideBar.hover(function(){
+        onHoverSideBar();
+    }, function (){
+        offHoverSideBar();
+    });
+
+    function onHoverSideBar(){
+        if (!animationLock){
+            clearTimeout(sideBarTimeout);
+            sideBarTimeout = null;
+            showBar();
+        }
+    }
+    function offHoverSideBar(){
+        if (sideBarTimeout === null){
+            sideBarTimeout = setTimeout(hideBar, 500    );
+        }
+    }
+
+    function showBar() { sideBar.animate({ opacity: '0.8' }, "fast"); }
+    function hideBar() { sideBar.animate({ opacity: '0.0' }, "fast"); }
 
 
     /**
      * Icon on hover anumation
      * @param element
      */
-    function onHover(element){
+    function onHoverIcon(element){
+        onHoverSideBar();
         element.animate({ left: "20px"}, "fast");
     }
 
@@ -178,9 +200,11 @@ $(window).on("load", function(){
      * Icon off hover animation
      * @param element
      */
-    function offHover(element){
-        if(!animationLock && element.width() == 50)
+    function offHoverIcon(element){
+        if(!animationLock && element.width() == 50){
+            offHoverSideBar();
             element.animate({left: "10px"}, "fast");
+        }
     }
 
 
@@ -334,7 +358,6 @@ $(window).on("load", function(){
                 terminal.fadeIn("slow");
                 overlay.fadeIn("slow");
                 typeAnimate();
-                animationLock = false;
             });
         });
     }
@@ -357,8 +380,6 @@ $(window).on("load", function(){
                resumeNav.fadeIn("slow");
                closeResume.fadeIn("slow");
                resumeContent.fadeIn("slow");
-
-               animationLock = false;
            });
 
         });
@@ -402,7 +423,6 @@ $(window).on("load", function(){
                 emailNav.fadeIn("slow");
                 closeEmail.fadeIn("slow");
                 contactContent.fadeIn("slow");
-                animationLock = false;
             });
         });
     }
@@ -426,11 +446,57 @@ $(window).on("load", function(){
         });
     }
 
-    function messageExpand(){}
-    function messageCollapse(){}
+    function messageExpand(){animationLock = false;}
+    function messageCollapse(){animationLock = false;}
 
-    function phoneExpand(){}
-    function phoneCollapse(){}
+    function phoneExpand(){
+
+        var left = findMiddle(240);
+        hideOtherIcons(phoneBox);
+        phoneIcon.fadeOut("slow", function(){
+            phoneBox.animate({
+                left: left,
+                height: '220px',
+                width: '240px',
+                top: '100px',
+                borderTopLeftRadius: 5,
+                borderTopRightRadius: 5,
+                borderBottomLeftRadius: 5,
+                borderBottomRightRadius: 5
+            }, function(){
+                phoneNav.fadeIn("slow");
+                closePhone.fadeIn("slow");
+                phoneContent.fadeIn("slow");
+            });
+        });
+    }
+    function phoneCollapse(){
+
+        phoneNav.fadeOut("slow");
+        closePhone.fadeOut("slow", function(){
+            phoneBox.animate({
+                height: '50px',
+                width: '50px',
+                left: '10px',
+                top: '390px',
+                borderTopLeftRadius: 50,
+                borderTopRightRadius: 50,
+                borderBottomLeftRadius: 50,
+                borderBottomRightRadius: 50
+            }, function(){
+                phoneIcon.fadeIn("slow");
+                showOtherIcons(phoneBox);
+                animationLock = false;
+            });
+        });
+    }
+
+    function findMiddle(elemWidth){
+        var value = ( body.width()/2 ) - ( elemWidth/2 );
+        console.log( "\'" + value.toString() + "px" + "\'");
+        return "\'" + value.toString() + "px" + "\'";
+    }
+
 
     function hideOtherIcons(element, callback){
         switch(element){
@@ -468,7 +534,7 @@ $(window).on("load", function(){
     }
 
 
-    function showOtherIcons(element, callback){
+    function showOtherIcons(element){
         switch(element){
             case terminalBox:
                 resumeBox.fadeIn("slow");
