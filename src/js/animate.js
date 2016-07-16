@@ -231,8 +231,9 @@ $(window).on("load", function(){
         var h;
         if (body.width() > 767)
             h = '600px';
-        else
+        else{
             h = '100%';
+        }
 
         content.css('overflow-y', 'auto');
         content.animate({
@@ -242,8 +243,8 @@ $(window).on("load", function(){
     }
     function scrollDown(){
         content.css('overflow-y', 'hidden');
-
         content.animate({
+            scrollTop: '0px',
             height: '70px'
         });
 
@@ -582,6 +583,7 @@ $(window).on("load", function(){
 
 
     function tileExpand(overlay, element){
+        closeAll();
         overlay.fadeIn("slow");
     }
     function tileCollapse(element){
