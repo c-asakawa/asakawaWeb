@@ -553,18 +553,9 @@ textarea {
 }
 @media screen and (max-width: 768px) {
 
-    #linkedIn {
-        margin-left: 50%;
-        left: -60px;
+    .tile {
+        height: 300px;
+        margin-top: -60px;
+        padding-bottom: 110px;
     }
-    #gitHub {
-        margin-left: 50%;
-        margin-top: -40px;
-    }
-    #faceBook {
-        margin-left: 50%;
-        left: 60px;
-        margin-top: -40px;
-    }
-
 }

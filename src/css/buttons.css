@@ -119,3 +119,25 @@
 #faceBook:active {
     background: url("../img/socialButtons/facebook_active.png") no-repeat;
 }
+@media screen and (max-width: 768px) {
+    .socialButton {display: inline-block}
+
+    #linkedIn {
+        margin-left: 50%;
+        left: -80px;
+        margin-top: 10px;
+    }
+    #gitHub {
+        margin-left: 50%;
+        left: -20px;
+        margin-top: -50px;
+    }
+    #faceBook {
+        margin-left: 50%;
+        left: 40px;
+        top: -75px;
+    }
+    #tile1 {
+
+    }
+}
