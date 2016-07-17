@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/preLoad.css">
     <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/tileFlip.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <!-- scripts -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -30,6 +32,7 @@
     <script src="js/preLoad.js"></script>
     <script src="js/main.js"></script>
     <script src="js/typed.js"></script>
+    <script src="js/tileFlip.js"></script>
     <script src="js/time.js"></script>
 </head>
 
@@ -132,20 +135,58 @@
 
         </li>
         <li class="row">
+
             <div class="tile col-sm-4 center-block">
                 <h4>School</h4>
-                <div id="tile_1">
-
+                <div id="tile_1" class="hover panel">
+                    <div class="front">
+                        <img src="img/psu.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/psu.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            insert brief description here
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
                 </div>
             </div>
+
             <div class="tile col-sm-4 center-block">
                 <h4>Freelance</h4>
-                <div id="tile_2"></div>
+                <div id="tile_2" class="hover panel">
+                    <div class="front">
+                        <img src="img/freelance.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/freelance.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            insert brief description here
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
+                </div>
             </div>
+
             <div class="tile col-sm-4 center-block">
                 <h4>Projects</h4>
-                <div id="tile_3"></div>
+                <div id="tile_3" class="hover panel">
+                    <div class="front">
+                        <img src="img/open_source.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/open_source.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            insert brief description here
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
+                </div>
             </div>
+
         </li>
     </ul>
 
