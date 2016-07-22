@@ -232,12 +232,14 @@ $(window).on("load", function(){
     }
 
 
+
+
     function scrollUp(){
         var h;
         if (body.width() > 767)
             h = '600px';
         else{
-            h = '100%';
+            h = $('#iconSideBar').height() - 20;
         }
 
         content.css('overflow-y', 'auto');
@@ -322,7 +324,7 @@ $(window).on("load", function(){
                 height: '50px',
                 width: '50px',
                 left: '10px',
-                top: '150px',
+                top: '60px',
                 borderTopLeftRadius: 50,
                 borderTopRightRadius: 50,
                 borderBottomLeftRadius: 50,
@@ -407,7 +409,7 @@ $(window).on("load", function(){
                 height: '50px',
                 width: '50px',
                 left: '10px',
-                top: '210px',
+                top: '120px',
                 borderTopLeftRadius: 50,
                 borderTopRightRadius: 50,
                 borderBottomLeftRadius: 50,
@@ -450,7 +452,7 @@ $(window).on("load", function(){
                 height: '50px',
                 width: '50px',
                 left: '10px',
-                top: '270px',
+                top: '180px',
                 borderTopLeftRadius: 50,
                 borderTopRightRadius: 50,
                 borderBottomLeftRadius: 50,
@@ -496,7 +498,7 @@ $(window).on("load", function(){
                 height: '50px',
                 width: '50px',
                 left: '10px',
-                top: '330px',
+                top: '240px',
                 borderTopLeftRadius: 50,
                 borderTopRightRadius: 50,
                 borderBottomLeftRadius: 50,

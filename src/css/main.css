@@ -52,22 +52,36 @@ a{
 }
 
 #mainNav{
+    position: absolute;
     width: 100%;
     height: 20px;
     background-color: black;
     opacity: 0.8;
+    color: white;
+
+}
+.mainNavText{
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    margin-left: 50%;
+    left: -80px;
+
 }
 #clock{
+    position: absolute;
     text-align: right;
     margin-right: 10px;
-    color: white;
+    right: 5px;
+    top: 1px;
+
 }
 
 /* icon positions */
-#terminalBox { top: 150px; }
-#resumeBox   { top: 210px; }
-#emailBox  { top: 270px; }
-#phoneBox { top: 330px; }
+#terminalBox { top: 60px; }
+#resumeBox   { top: 120px; }
+#emailBox  { top: 180px; }
+#phoneBox { top: 240px; }
 
 #resumeContent{
     display: none;
