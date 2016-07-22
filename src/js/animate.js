@@ -50,7 +50,7 @@ $(window).on("load", function(){
 
     var mainContent = $('#mainContent');
     var resumeContent = $('#resumeContent');
-    var contactContent = $('#contactContent');
+    var emailContent = $('#emailContent');
     var phoneContent = $('#phoneContent');
 
     var terminalIcon = $("#terminalIcon");
@@ -428,7 +428,7 @@ $(window).on("load", function(){
         emailIcon.fadeOut("slow", function(){
             emailBox.animate({
                 left: left,
-                height: '300px',
+                height: '200px',
                 width: '300px',
                 top: '100px',
                 borderTopLeftRadius: 5,
@@ -438,11 +438,12 @@ $(window).on("load", function(){
             }, function(){
                 emailNav.fadeIn("slow");
                 closeEmail.fadeIn("slow");
-                contactContent.fadeIn("slow");
+                emailContent.fadeIn("slow");
             });
         });
     }
     function emailCollapse(){
+        emailContent.fadeOut("slow");
         emailNav.fadeOut("slow");
         closeEmail.fadeOut("slow", function(){
             emailBox.animate({

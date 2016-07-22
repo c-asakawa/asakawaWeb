@@ -86,6 +86,16 @@ a{
     color: black;
     padding: 20px;
 }
+#emailContent{
+    display: none;
+    position: absolute;
+    top: 26px;
+    width: 100%;
+    height: 204px;
+    font-size: 16px;
+    color: black;
+    padding: 20px;
+}
 .terminalText{
     font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
     font-size: 14px;

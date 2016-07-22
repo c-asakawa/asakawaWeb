@@ -49,17 +49,14 @@
     -webkit-border-radius: 50px 50px 50px 50px;
 }
 #phoneCallButton:hover{
-    background-color: #e5e5e5;
-
-}
+     background-color: #e5e5e5;
+ }
 #phoneCallButton:active{
     background-color: #bababa;
     -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
     box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
-
 }
-
 .phoneImage {
     background: url('../img/icons/phone.png') no-repeat;
     position: absolute;
@@ -71,11 +68,57 @@
     -webkit-border-radius: 50px 50px 50px 50px;
 }
 .phoneImage:hover{
-     background: url('../img/icons/phone_hover.png') no-repeat;
- }
+    background: url('../img/icons/phone_hover.png') no-repeat;
+}
 .phoneImage:active{
     background: url('../img/icons/phone_active.png') no-repeat;
 }
+
+/* send email button */
+#sendEmailButton{
+    position: relative;
+    top: 20px;
+    width: 255px;
+    height: 50px;
+    background-color: lightgrey;
+    font-size: 18px;
+    padding-top: 12px;
+    padding-left: 65px;
+
+    box-shadow:
+        0 0 0 1px #3d3d3d,
+        0 0 0 2px #717171;
+
+    border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+}
+#sendEmailButton:hover{
+    background-color: #e5e5e5;
+}
+#sendEmailButton:active{
+    background-color: #bababa;
+    -webkit-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+.emailImage {
+    background: url('../img/icons/email.png') no-repeat;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+}
+.emailImage:hover{
+    background: url('../img/icons/email_hover.png') no-repeat;
+}
+.emailImage:active{
+    background: url('../img/icons/email_active.png') no-repeat;
+}
+
 
 
 /* social media buttons */
