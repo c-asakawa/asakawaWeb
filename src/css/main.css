@@ -27,6 +27,9 @@ ul {
     padding: 0;
     list-style-type: none;
 }
+a{
+    text-decoration: none;
+}
 
 .overlay {
     display: none;
@@ -240,13 +243,14 @@ ul {
     height: 94%;
     left: 2%;
     top: 2%;
+    overflow-y: auto;
 }
 .tileTitle {
     width: 100%;
     height: 50px;
     text-align: center;
-    color: white;
-    font-size: 18px;
+    color: black;
+    font-size: 24px;
     padding-top: 20px;
 }
 .tileButton {
@@ -254,22 +258,42 @@ ul {
     width: 40px;
     height: 40px;
     background-color: black;
-
-    top: 10px;
+    margin: 10px;
     right: 0;
-
-
     border-radius: 40px 40px 40px 40px;
     -moz-border-radius: 40px 40px 40px 40px;
     -webkit-border-radius: 40px 40px 40px 40px;
 }
 .tileClose {
-    right: 10px;
 }
 .tileBlock {
     background-color: white;
 }
+.schoolLogo {
+    position: inherit;
+    width: 300px;
+    height: 150px;
+    margin-left: 50%;
+    left: -150px;
 
+}
+.psuLogo {
+    background-image: url('../img/psuLogo.png');
+}
+.pccLogo {
+    background-image: url('../img/pccLogo.png');
+}
+.courseList {
+    width: 70%;
+    margin-left: 15%;
+    text-decoration: none;
+}
+
+.courseInfo {
+    position: relative;
+    width: 70%;
+    margin-left: 15%;
+}
 
 #profileBio {
     position: relative;
@@ -563,4 +587,5 @@ textarea {
         margin-top: -60px;
         padding-bottom: 110px;
     }
+
 }
