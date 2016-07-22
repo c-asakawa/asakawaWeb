@@ -273,6 +273,15 @@ a{
     -moz-border-radius: 50px 50px 50px 50px;
     -webkit-border-radius: 50px 50px 50px 50px;
 }
+.tileButton:active{
+    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(0,0,0,0.68);
+    -moz-box-shadow: inset 0px 0px 10px 1px rgba(0,0,0,0.68);
+    box-shadow: inset 0px 0px 10px 1px rgba(0,0,0,0.68);
+    border: 1px solid #000000;
+}
+.tileButton:hover{
+    border: 1px solid #000000;
+}
 .tileClose {
     background: url("../img/closeButtonBig.png") no-repeat;
 }
