@@ -162,6 +162,7 @@
 #faceBook:active {
     background: url("../img/socialButtons/facebook_active.png") no-repeat;
 }
+
 @media screen and (max-width: 768px) {
     .socialButton {display: inline-block}
 

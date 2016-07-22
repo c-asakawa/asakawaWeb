@@ -60,7 +60,7 @@ $(window).on("load", function(){
     var phoneIcon = $("#phoneIcon");
 
     var terminal = $("#terminalContent");
-    var up = $("#upButton");
+    var scrollButton = $("#scrollButton");
     var content = $("#mainContent");
     var input = $("#terminalInput");
     var output = $(".terminalOutput");
@@ -99,7 +99,7 @@ $(window).on("load", function(){
     emailIcon.click(function(){ clickButton(emailIcon); });
     messageIcon.click(function(){ clickButton(messageIcon); });
     phoneIcon.click(function(){ clickButton(phoneIcon); });
-    up.click(function() {
+    scrollButton.click(function() {
         if (content.height() < 71)
             scrollUp();
         else
@@ -243,9 +243,15 @@ $(window).on("load", function(){
         }
 
         content.css('overflow-y', 'auto');
+
+
+
         content.animate({
             height: h
-        }, "slow");
+        }, "slow", function(){
+            scrollButton.removeClass('upArrow');
+            scrollButton.addClass('downArrow');
+        });
 
     }
     function scrollDown(){
@@ -253,7 +259,11 @@ $(window).on("load", function(){
         content.animate({
             scrollTop: '0px',
             height: '70px'
+        }, "slow", function(){
+            scrollButton.removeClass('downArrow');
+            scrollButton.addClass('upArrow');
         });
+
 
     }
 

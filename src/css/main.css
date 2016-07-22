@@ -212,11 +212,19 @@ a{
     left: 50%;
     top: 5px;
     margin-left: -30px;
-
     border-radius: 60px 60px 60px 60px;
     -moz-border-radius: 60px 60px 60px 60px;
     -webkit-border-radius: 60px 60px 60px 60px;
 }
+.upArrow { background: url("../img/buttons/upArrowButton.png") no-repeat; }
+.upArrow:hover { background: url("../img/buttons/upArrowButton_hover.png") no-repeat;+ }
+.upArrow:active { background: url("../img/buttons/upArrowButton_active.png") no-repeat;+ }
+
+.downArrow {
+    background: url("../img/buttons/downArrowButton.png") no-repeat;
+}
+.downArrow:hover { background: url("../img/buttons/downArrowButton_hover.png") no-repeat;+ }
+.downArrow:active { background: url("../img/buttons/downArrowButton_active.png") no-repeat;+ }
 
 #profilePic {
     position: relative;
