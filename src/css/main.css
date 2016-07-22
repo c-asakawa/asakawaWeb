@@ -235,9 +235,11 @@ ul {
 }
 .tileConent {
     position: absolute;
+    background-color: white;
     width: 96%;
-    height: 100%;
-    margin-left: 2%;
+    height: 94%;
+    left: 2%;
+    top: 2%;
 }
 .tileTitle {
     width: 100%;
@@ -262,7 +264,10 @@ ul {
     -webkit-border-radius: 40px 40px 40px 40px;
 }
 .tileClose {
-
+    right: 10px;
+}
+.tileBlock {
+    background-color: white;
 }
 
 
