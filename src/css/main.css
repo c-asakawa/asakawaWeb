@@ -290,9 +290,10 @@ a{
     width: 100%;
     height: 50px;
     text-align: center;
-    color: black;
     font-size: 24px;
     padding-top: 20px;
+    color: #444444;
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
 }
 .tileButton {
     position: absolute;
@@ -320,19 +321,12 @@ a{
 .tileBlock {
     background-color: white;
 }
-.schoolLogo {
+.logo {
     position: inherit;
     width: 300px;
     height: 150px;
     margin-left: 50%;
     left: -150px;
-}
-.freelanceLogo {
-    position: inherit;
-    width: 400px;
-    height: 400px;
-    margin-left: 50%;
-    left: -200px;
 }
 .psuLogo {  background: url('../img/psuLogo.png') no-repeat;  }
 .pccLogo { background: url('../img/pccLogo.png') no-repeat; }
@@ -350,6 +344,18 @@ a{
     width: 70%;
     margin-left: 15%;
 }
+
+.freelanceDemo {
+    position: inherit;
+    width: 300px;
+    height: 400px;
+    margin-left: 50%;
+    left: -150px;
+}
+.fiveotreeDemo { background: url("../img/fiveotreeDemo.png") no-repeat; }
+.talusDemo { background: url("../img/talusDesignDemo.png") no-repeat; }
+
+
 
 #profileBio {
     position: relative;
