@@ -423,10 +423,11 @@ $(window).on("load", function(){
     }
 
     function emailExpand(){
+        var left = findMiddle(300);
         hideOtherIcons(emailBox);
         emailIcon.fadeOut("slow", function(){
             emailBox.animate({
-                left: '70px',
+                left: left,
                 height: '300px',
                 width: '300px',
                 top: '100px',
@@ -508,9 +509,7 @@ $(window).on("load", function(){
     }
 
     function findMiddle(elemWidth){
-        var value = ( body.width()/2 ) - ( elemWidth/2 );
-        console.log( "\'" + value.toString() + "px" + "\'");
-        return "\'" + value.toString() + "px" + "\'";
+        return ( body.width()/2 ) - ( elemWidth/2 );
     }
 
 
