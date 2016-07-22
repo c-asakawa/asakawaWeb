@@ -97,12 +97,6 @@
         <li id="closeEmail" class="closeButton navButton"></li>
     </ul>
 
-    <ul id="messageBox" class="icon">
-        <li id="messageIcon"></li>
-        <li id="navMessage" class="navBarSmall">&ensp;Message</li>
-        <li id="closeMessage" class="closeButton navButton"></li>
-    </ul>
-
     <ul id="phoneBox" class="icon">
         <li id="phoneIcon"></li>
         <li id="navPhone" class="navBarSmall">&ensp;Phone</li>
@@ -118,7 +112,7 @@
         </li>
     </ul>
 
-
+    <!-- main content area -->
     <ul id="mainContent" class="container-fluid">
         <li class="scrollButton" id="upButton"></li>
         <li class="row">
@@ -143,10 +137,10 @@
                     <div id="faceBook" class="socialButton smallShadow"></div>
                 </a>
             </div>
-
         </li>
-        <li class="row">
 
+        <!- content tiles --->
+        <li class="row">
             <div class="tile col-sm-4 center-block">
                 <h4>School</h4>
                 <div id="tile_1" class="hover panel">
@@ -163,7 +157,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="tile col-sm-4 center-block">
                 <h4>Freelance</h4>
                 <div id="tile_2" class="hover panel">
@@ -180,7 +173,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="tile col-sm-4 center-block">
                 <h4>Projects</h4>
                 <div id="tile_3" class="hover panel">
@@ -197,17 +189,19 @@
                     </div>
                 </div>
             </div>
-
         </li>
     </ul>
 
 
     <!-- School Content -->
-    <div id="schoolOverlay" class="tileOverlay PSUgreen">
-        <ul class="tileConent container-fluid">
+    <div id="schoolOverlay" class="tileOverlay green transparent"></div>
+    <div id="schoolContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
             <li class="row">
                 <div class="col-sm-1 pull-left"></div>
-                <div class="col-sm-1 pull-right"><div class="tileButton tileClose"></div></div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeSchool" class="tileButton tileClose"></div>
+                </div>
                 <div class="tileTitle col-sm-10">Academia</div>
             </li>
             <li class="row">
@@ -281,13 +275,38 @@
     </div>
 
 
-    <!-- School Content -->
-    <div id="freelanceOverlay" class="tileOverlay PSUgreen">
-        <ul class="tileConent container-fluid">
+    <!-- Freelance Content -->
+    <div id="freelanceOverlay" class="tileOverlay blue transparent"></div>
+    <div id="freelanceContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
             <li class="row">
                 <div class="col-sm-1 pull-left"></div>
-                <div class="col-sm-1 pull-right"><div class="tileButton tileClose"></div></div>
-                <div class="tileTitle col-sm-10">Academia</div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeFreelance" class="tileButton tileClose"></div>
+                </div>
+                <div class="tileTitle col-sm-10">Freelance Projects</div>
+            </li>
+            <li class="row">
+                <div class="col-sm-6 center-block">
+                    <div class="freelanceLogo fiveotreeLogo"></div>
+                </div>
+                <div class="col-sm-6 center-block">
+                    <div class="freelanceLogo talusLogo"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Projects Content -->
+    <div id="projectsOverlay" class="tileOverlay red transparent"></div>
+    <div id="projectsContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
+            <li class="row">
+                <div class="col-sm-1 pull-left"></div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeProjects"  class="tileButton tileClose"></div>
+                </div>
+                <div class="tileTitle col-sm-10">Projects</div>
             </li>
             <li class="row">
 

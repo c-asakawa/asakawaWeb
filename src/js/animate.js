@@ -16,6 +16,15 @@ $(window).on("load", function(){
     var sideBar = $("#iconSideBar");
 
     var schoolOverlay = $("#schoolOverlay");
+    var freelanceOverlay = $("#freelanceOverlay");
+    var projectsOverlay = $("#projectsOverlay");
+    var closeOverlay = $('.tileClose');
+    var schoolContent = $("#schoolContent");
+    var freelanceContent = $("#freelanceContent");
+    var projectsContent = $("#projectsContent");
+    var closeSchool = $("#closeSchool");
+    var closeFreelance = $("#closeFreelance");
+    var closeProjects = $("#closeProjects");
 
 
     /* close buttons */
@@ -90,24 +99,18 @@ $(window).on("load", function(){
     emailIcon.click(function(){ clickButton(emailIcon); });
     messageIcon.click(function(){ clickButton(messageIcon); });
     phoneIcon.click(function(){ clickButton(phoneIcon); });
-
     up.click(function() {
-        if (content.height() < 71) {
+        if (content.height() < 71)
             scrollUp();
-        }
         else
             scrollDown();
     });
-
-    tile1.click(function (){
-        tileExpand(schoolOverlay, tile1);
-    });
-    tile2.click(function (){
-
-    });
-    tile3.click(function (){
-
-    });
+    tile1.click(function (){ tileExpand(schoolOverlay, schoolContent);});
+    tile2.click(function (){tileExpand(freelanceOverlay, freelanceContent);});
+    tile3.click(function (){tileExpand(projectsOverlay, projectsContent);});
+    closeSchool.click(function(){ tileCollapse(schoolOverlay, schoolContent) });
+    closeFreelance.click(function(){ tileCollapse(freelanceOverlay, freelanceContent) });
+    closeProjects.click(function(){ tileCollapse(projectsOverlay, projectsContent) });
 
     /**
      * only proceed to expand the element if the
@@ -223,7 +226,9 @@ $(window).on("load", function(){
         messageCollapse();
         phoneCollapse();
         scrollDown();
-        tileCollapse(schoolOverlay);
+        tileCollapse(schoolOverlay, schoolContent);
+        tileCollapse(freelanceOverlay, freelanceContent);
+        tileCollapse(projectsOverlay, projectsContent);
     }
 
 
@@ -489,7 +494,7 @@ $(window).on("load", function(){
                 height: '50px',
                 width: '50px',
                 left: '10px',
-                top: '390px',
+                top: '330px',
                 borderTopLeftRadius: 50,
                 borderTopRightRadius: 50,
                 borderBottomLeftRadius: 50,
@@ -582,12 +587,14 @@ $(window).on("load", function(){
 
 
 
-    function tileExpand(overlay, element){
-        closeAll();
+    function tileExpand(overlay, content){
+        //closeAll();
         overlay.fadeIn("slow");
+        content.fadeIn("slow");
     }
-    function tileCollapse(element){
-        element.fadeOut("slow");
+    function tileCollapse(overlay, content){
+        overlay.fadeOut("slow");
+        content.fadeOut("slow");
     }
 
 });

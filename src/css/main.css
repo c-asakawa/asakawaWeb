@@ -67,8 +67,7 @@ a{
 #terminalBox { top: 150px; }
 #resumeBox   { top: 210px; }
 #emailBox  { top: 270px; }
-#messageBox { top: 330px; }
-#phoneBox { top: 390px; }
+#phoneBox { top: 330px; }
 
 #resumeContent{
     display: none;
@@ -175,6 +174,9 @@ a{
     -moz-box-shadow: 0 0 10px 0 rgba(113, 113, 113, 0.75);
     box-shadow: 0 0 10px 0 rgba(113, 113, 113, 0.75);
 }
+.transparent {
+    opacity: 0.5;
+}
 
 
 
@@ -233,17 +235,24 @@ a{
     height: 100%;
     top: 20px;
 }
-.PSUgreen {
-    background-color: #6A7F10;
+.green {
+    background-color: #1a7f09;
 }
-.tileConent {
+.blue {
+    background-color: #1f65ff;
+}
+.red {
+    background-color: #ff5f33;
+}
+.tileContent {
     position: absolute;
     background-color: white;
-    width: 96%;
-    height: 94%;
-    left: 2%;
-    top: 2%;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
     overflow-y: auto;
+    opacity: 1.0;
 }
 .tileTitle {
     width: 100%;
@@ -275,14 +284,19 @@ a{
     height: 150px;
     margin-left: 50%;
     left: -150px;
+}
+.freelanceLogo {
+    position: inherit;
+    width: 400px;
+    height: 400px;
+    margin-left: 50%;
+    left: -200px;
+}
+.psuLogo {  background: url('../img/psuLogo.png') no-repeat;  }
+.pccLogo { background: url('../img/pccLogo.png') no-repeat; }
+.talusLogo { background: url('../img/talusDesignLogo.png') no-repeat; }
+.fiveotreeLogo { background: url('../img/fiveotreeLogo.png') no-repeat; }
 
-}
-.psuLogo {
-    background-image: url('../img/psuLogo.png');
-}
-.pccLogo {
-    background-image: url('../img/pccLogo.png');
-}
 .courseList {
     width: 70%;
     margin-left: 15%;
@@ -586,6 +600,12 @@ textarea {
         height: 300px;
         margin-top: -60px;
         padding-bottom: 110px;
+    }
+    .tileContent {
+        width: 96%;
+        height: 94%;
+        left: 2%;
+        top: 2%;
     }
 
 }
