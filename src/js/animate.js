@@ -79,11 +79,17 @@ $(window).on("load", function(){
     var animationLock = false;
 
 
-    //main();
+    main();
     function main(){
+        /* wait a sec, then start the little demo */
         setTimeout(function(){
             terminalExpand();
         }, 1000);
+        /* okay lets close the terminal for the user */
+        setTimeout(function(){
+            terminalCollapse();
+        }, 1000 * 13);
+
     }
 
     /**
