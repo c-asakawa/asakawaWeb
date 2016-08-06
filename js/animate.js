@@ -361,7 +361,7 @@ $(window).on("load", function(){
         //if on mobile device, expand to fill more of the screen
         var h, w, l, t;
         if (body.width() > 767) {
-            h = '50%';
+            h = '60%';
             w = '50%';
             l = '25%';
             t = '10%';
