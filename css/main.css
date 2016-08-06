@@ -670,6 +670,11 @@ textarea {
         top: 2%;
     }
 
+    body{
+        background: url("../img/bg_mobile.jpg") no-repeat center center fixed;
+        background-size: 100%;
+    }
+
 }
 @media screen and (min-width: 1300px) {
 
