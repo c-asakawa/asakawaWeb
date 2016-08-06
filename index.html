@@ -1,35 +1,562 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head lang="en">
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Chris Asakawa </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Angular & jQuery library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="jquery-1.11.3.min.js"></script>
-    <!-- StyleSheets -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- JavaScript -->
-    <script src="terminal.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
 
+    <!-- style sheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/preLoad.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/aboutFishFate.css">
+    <link rel="stylesheet" href="css/tileFlip.css">
+    <link rel="stylesheet" href="css/fancyLists.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-    <title></title>
+    <!-- scripts -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/preLoad.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/tileFlip.js"></script>
+    <script src="js/time.js"></script>
 </head>
-<body ng-app="asakawa">
-    <img src="images/bg.jpg" class="background stretch opaque noSelect">
 
-    <!-- terminal intro -->
-    <ul id="terminal" class="shadow roundCorners" ng-controller="terminalController">
-        <li id="terminalNav" class="blackGradient"></li>
-        <li class="navText noSelect">{{directory}}</li>
-        <li class="navCloseButton"></li>
-        <li id="terminalTextArea">
-        chris@asakawa.me:{{directory}}$ ...
+<body onload="startTime()">
+<div class="overlay"></div>
+<div id="overlay"></div>
+<div ng-app="">
 
+    <!-- mini nav bar w/ time-->
+    <ul id="mainNav">
+        <li class="mainNavText">Chris Asakawa's Portfolio</li>
+        <li id="clock"></li>
+    </ul>
+    <div id="iconSideBar"></div>
+
+    <ul id="terminalBox" class="icon terminalText">
+        <li id="navTerminal" class="navBarSmall">&ensp;Terminal</li>
+        <li id="closeTerminal" class="closeButton navButton"></li>
+
+        <li id="terminalContent">
+            <a id="output1">
+                <span style="color:white">&ensp;chris@asakawa :: ~</span>
+                <span style="color:greenyellow ">$</span>
+                <span style="color:white">whoami</span><br>
+                &ensp;Hi, my name is Chris Asakawa. <br>
+                &ensp;I'm a software developer. <br>
+            </a>
+            <a id="output2">
+                <span style="color:white">&ensp;chris@asakawa :: ~</span>
+                <span style="color:greenyellow ">$</span>
+                <span style="color:white">./welcome</span><br>
+                <br>
+                &ensp;---------------------------------- <br>
+                &ensp;|&ensp;&ensp;Welcome! This is my portfolio&ensp;&ensp;| <br>
+                &ensp;---------------------------------- <br>
+            </a>
+            <a id="output3">&ensp;This portfolio contains: <br></a>
+            <a id="output4">&ensp;&ensp; - Academic Achievements <br></a>
+            <a id="output5">&ensp;&ensp; - Freelance Work <br></a>
+            <a id="output6">&ensp;&ensp; - Personal Projects <br></a>
+            <a id="output7">&ensp;&ensp; - Open Source Projects <br><br></a>
+
+
+            <a id="inputLine">
+                <span style="color:white">&ensp;chris@asakawa :: ~</span>
+                <span style="color:greenyellow ">$</span>
+            </a>
+            <a id="terminalInput"></a>
         </li>
-
-
+        <li id="terminalIcon"></li>
     </ul>
 
+    <ul id="resumeBox" class="icon">
+        <li id="resumeIcon"></li>
+        <li id="navResume" class="navBarSmall">&ensp;Resume</li>
+        <li id="closeResume" class="closeButton navButton"></li>
+        <li id="resumeContent">
+            <embed src="files/resume.pdf" width="100%" height="95%">
+        </li>
+    </ul>
+
+    <ul id="emailBox" class="icon">
+        <li id="emailIcon"></li>
+        <li id="navEmail" class="navBarSmall">&ensp;Email</li>
+        <li id="closeEmail" class="closeButton navButton"></li>
+        <li id="emailContent">
+            <h4>Email me</h4>
+            chris@asakawa.me <br>
+            <a href="mailto:chris@asakawa.me" target="_top">
+                <div id="sendEmailButton" class="emailImage" >
+                    chris@asakawa.me
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <ul id="phoneBox" class="icon">
+        <li id="phoneIcon"></li>
+        <li id="navPhone" class="navBarSmall">&ensp;Phone</li>
+        <li id="closePhone" class="closeButton navButton"></li>
+        <li id="phoneContent">
+            <h4>Want to call me directly?</h4>
+            Please leave me a voice-mail if I don't answer. <br>
+            <a href="tel:503-724-7569">
+                <div id="phoneCallButton" class="phoneImage" >
+                    503-724-7569
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <!-- main content area -->
+    <ul id="mainContent" class="container-fluid">
+        <li class="scrollButton upArrow" id="scrollButton"></li>
+        <li class="row">
+            <div id="profileBio" class="col-sm-7 text-center">
+                <h3>Why Code?</h3>
+                I love coding. Something that will always interest me is making things. Which
+                why I love what I do, there is nothing more rewarding then developing software to
+                solve complex problems. Writing code makes me feel empowered, to create something
+                useful out of nothing. It enables me to play God, by creating a virtual world,
+                where I have complete control. The potential and innovations of software never ceases to amaze me,
+                and I look forward to learning more in my future in programming.
+            </div>
+            <div id="profilePic" class="col-sm-4 center-block"></div>
+            <div class="col-sm-1 center-block">
+                <a href="https://www.linkedin.com/in/christopher-asakawa-11007937" target="_blank">
+                    <div id="linkedIn" class="socialButton smallShadow"></div>
+                </a>
+                <a href="https://github.com/c-asakawa" target="_blank">
+                    <div id="gitHub" class="socialButton smallShadow"></div>
+                </a>
+                <a href="https://www.facebook.com/chris.asa.1" target="_blank">
+                    <div id="faceBook" class="socialButton smallShadow"></div>
+                </a>
+            </div>
+        </li>
+
+        <!- content tiles --->
+        <li class="row">
+            <div class="tile col-sm-4 center-block">
+                <h4>School</h4>
+                <div id="tile_1" class="hover panel">
+                    <div class="front">
+                        <img src="img/psu.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/psu.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            Academic Achievements at Portland State University
+                            and Portland Community College.
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile col-sm-4 center-block">
+                <h4>Freelance</h4>
+                <div id="tile_2" class="hover panel">
+                    <div class="front">
+                        <img src="img/freelance.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/freelance.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            Web development freelance work.
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile col-sm-4 center-block">
+                <h4>Projects</h4>
+                <div id="tile_3" class="hover panel">
+                    <div class="front">
+                        <img src="img/open_source.jpg" class="fitImage">
+                        <div class="pad"></div>
+                    </div>
+                    <div class="back">
+                        <img src="img/open_source.jpg" class="fitImage">
+                        <div class="tileBackOverlay">
+                            Open source and personal projects.
+                        </div>
+                        <div class="pad overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <!-- School Content -->
+    <div id="schoolOverlay" class="tileOverlay green transparent"></div>
+    <div id="schoolContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
+            <li class="row">
+                <div class="col-sm-1 pull-left"></div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeSchool" class="tileButton tileClose"></div>
+                </div>
+                <div class="tileTitle col-sm-10">Academia</div>
+            </li>
+            <li class="row">
+                <div class="col-sm-6 center-block">
+                    <div class="logo psuLogo"></div>
+                    <div class="courseInfo">
+                        <p><br>
+                            I graduated from PSU with a bachelors degree in computer science in the
+                            summer of 2016. <br>
+                        </p><br>
+                    </div>
+                    <div class="courseInfo">
+                        <h4>PSU Computer Science Course List:</h4>
+                    </div>
+
+                    <ul class="listStart courseList center-block">
+                        <li class="listElement"><a>Data Structures</a></li>
+                        <li class="listElement"><a>Programming Systems</a></li>
+                        <li class="listElement"><a>Discrete Structures I and II</a></li>
+                        <li class="listElement"><a>Software Engineering</a></li>
+                        <li class="listElement"><a>Computational Structures</a></li>
+                        <li class="listElement"><a>Operating Systems</a></li>
+                        <li class="listElement"><a>Computer Hardware</a></li>
+                        <li class="listElement"><a>Language and Compiler Design I and II</a></li>
+                        <li class="listElement"><a>Databases</a></li>
+                        <li class="listElement"><a>Computer Vision</a></li>
+                        <li class="listElement"><a>Network Security</a></li>
+                        <li class="listElement"><a>Open Source Software</a></li>
+                        <li class="listElement"><a>Capstone I and II</a></li>
+                        <li class="listElement"><a>Open Source Software</a></li>
+                        <li class="listElement"><a>Software Development Ethics</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-sm-6 center-block">
+                    <div class="logo pccLogo"></div>
+
+
+                    <div class="courseInfo">
+                        <h4>PCC General Education Course List:</h4>
+                    </div>
+                    <ul class="listStart courseList center-block">
+                        <li class="listElement"><a>Physics I, II, & III</a></li>
+                        <li class="listElement"><a>Calculus I, II, & III</a></li>
+                        <li class="listElement"><a>Statistics</a></li>
+                        <li class="listElement"><a>Discrete Mathematics</a></li>
+                        <li class="listElement"><a>Linear Algebra</a></li>
+                        <li class="listElement"><a>Technical Writing</a></li>
+                        <li class="listElement"><a>Public Speaking</a></li>
+                        <li class="listElement"><a>General Psychology I & II</a></li>
+                        <li class="listElement"><a>General Sociology I & II</a></li>
+                        <li class="listElement"><a>General Political Science I & II</a></li>
+                        <li class="listElement"><a>Philosophy Critical Thinking</a></li>
+                        <li class="listElement"><a>Philosophy of Pseudoscience</a></li>
+                        <li class="listElement"><a>Philosophy of Religion</a></li>
+                        <li class="listElement"><a>Philosophy of Business</a></li>
+                        <li class="listElement"><a>Environmental Science</a></li>
+                        <li class="listElement"><a>Perspectives on Terrorism</a></li>
+                    </ul>
+                    <div class="courseInfo">
+                        <p><br>
+                            **At PCC I was award a associates in liberal arts. Though out my duration at
+                            this school I did not know which career path to follow so I have an extra 80
+                            general education credits that are not being used towards my bachelors degree.
+                        </p><br>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Freelance Content -->
+    <div id="freelanceOverlay" class="tileOverlay blue transparent"></div>
+    <div id="freelanceContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
+            <li class="row">
+                <div class="col-sm-1 pull-left"></div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeFreelance" class="tileButton tileClose"></div>
+                </div>
+                <div class="tileTitle col-sm-10">Freelance Projects</div>
+            </li>
+            <li class="row">
+                <div class="col-sm-6 center-block">
+                    <div class="logo fiveotreeLogo"></div>
+                    <h3 class="freelanceInfo">
+                        <a href="http://fiveotree.com" target="_blank">fiveotree.com</a>
+                    </h3>
+
+                    <div class="freelanceInfo">
+                        I designed and developed this e-commerce website, this client owns
+                        a small portland based clothing company.
+                        <br>
+                    </div>
+
+
+                    <div class="freelanceDemo fiveotreeDemo"></div>
+                </div>
+                <div class="col-sm-6 center-block">
+                    <div class="logo talusLogo"></div>
+                    <h3 class="freelanceInfo">
+                        <a href="http://talusdesign3d.com/" target="_blank">talusdesign3d.com</a>
+                    </h3>
+
+                    <div class="freelanceInfo">
+                        I designed and developed this website, for this 3d printing company.
+                        <br>
+                    </div>
+                    <div class="freelanceDemo talusDemo"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Projects Content -->
+    <div id="projectsOverlay" class="tileOverlay red transparent"></div>
+    <div id="projectsContent" class="tileOverlay">
+        <ul class="tileContent container-fluid">
+            <li class="row">
+                <div class="col-sm-1 pull-left"></div>
+                <div class="col-sm-1 pull-right">
+                    <div id="closeProjects"  class="tileButton tileClose"></div>
+                </div>
+                <div class="tileTitle col-sm-10">Projects</div>
+            </li>
+            <li class="row">
+                <div class="col-sm-6 center-block">
+                    <div id="aboutBlock" >
+                        <div>
+                            <h4>Fish Tank Random Number Generator</h4>
+                            <div id="fishDemo"><img src="img/fishDemo.gif"></div>
+                            <div id="fishIcon"><img src="img/fishIcon.png"></div>
+                            <h4  style="padding-left: 70px;" id="aboutViewHeader">Also see my android and iOS application that demonstrates the functionality
+                            of this project <a href="https://play.google.com/store/apps/details?id=com.ionicframework.fishfate542805"
+                                               target="_blank">Google Play Market</a></h4>
+                            <ol class="rectangle-list">
+                                <li>
+                                    <a id="listElement0"><div class="listItemHeader"><b>Fish Setup</b></div>
+                                        <div id="listItem0" class="overflow-scroll">
+                                            <img id="tankSetup" src="img/tankSetup.png"><br>
+                                            We used a raspberry pi and a raspberry pi fish eye camera to stream a video of the fish.
+                                            We then process this video to give us an x and y position of each fish for each frame of
+                                            the video.
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="listElement1"><div class="listItemHeader"><b>Fish Tracking</b></div>
+                                        <div id="listItem1" class="overflow-scroll">
+                                            <img id="fishPosition" src="img/fishPosition.png"><br>
+                                            Fish movements are tracked by their initial position on an x/y plane, where their
+                                            next position they move to will generate a binary number as
+                                            shown on the the picture above.
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a id="listElement2"><div class="listItemHeader"><b>Generating Randomness</b></div>
+                                        <div id="listItem2" class="overflow-scroll">
+                                            <br>We read in a certain number of bits from the bitstream and then calculate the
+                                            distribution of the 1's and 0's.<br><br>From that we calculate the Shannon Entropy which tells
+                                            the amount of entropy in the bits. Entropy is then calculated
+                                            until there are 256 bits of entropy to be inputted into a SHA1 Hash Function.<br><br>The hash
+                                            function then outputs a 160 bit Hex number and finally this Hex number is converted to
+                                            a Binary number to send to the server.
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a id="listElement3"><div class="listItemHeader"><b>How Random?</b></div>
+                                        <div id="listItem3" class="overflow-scroll">
+                                            <img id="scatter" src="img/graph.png" class="stretch"><br>
+                                            Above is a scatter plot graph that shows the
+                                            distribution of about 2000 randomly generated x and y values
+                                            from the fish between 0 to 128.
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a id="listElement4"><div class="listItemHeader"><b>The Stats</b></div>
+                                        <div id="listItem4" class="overflow-scroll">
+                                            <table id="listItemTable" class="nistTable smallBorderRadius">
+                                                <tr>
+                                                    <th align="left"><b>Statistical Test</b></th>
+                                                    <th><b>Successful Proportion</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Frequency</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Block Frequency</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cumulative Sums</td>
+                                                    <td align="center">2/2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Runs</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Longest Run</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Random Binary Matrix Rank</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Discrete Fourier Transform (Spectral)</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Non-Overlapping (Aperiodic) Template Matching</td>
+                                                    <td align="center">146/148</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Overlapping (Periodic) Template Matching</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Approximate Entropy</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Serial</td>
+                                                    <td align="center">2/2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Linear Complexity</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                            </table>
+                                            Above are NIST Tests used to determine the authenticity of the app's randomness
+                                        </div>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 center-block">
+                    <div class="freelanceInfo">
+                        <h4>Electric Motorized Skateboard</h4>
+                    </div>
+                    <div class="freelanceInfo">
+                        I started designing and prototyping electric skateboard builds back in 2014, and since then
+                        I have created five separate builds. My most recent build gets a range of about 10 miles, and
+                        has a top speed of 41 mph.
+                    </div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/1.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/2.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/3.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/4.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/5.png"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+<!--
+    Loading screen overlay.
+    pre-loading button icons to fix image flickering
+-->
+<div class="se-pre-con"></div>
+<div id="preload-01"></div>
+<div id="preload-02"></div>
+<div id="preload-03"></div>
+<div id="preload-04"></div>
+<div id="preload-05"></div>
+<div id="preload-06"></div>
+<div id="preload-07"></div>
+<div id="preload-08"></div>
+<div id="preload-09"></div>
+<div id="preload-10"></div>
+<div id="preload-11"></div>
+<div id="preload-12"></div>
+<div id="preload-13"></div>
+<div id="preload-14"></div>
+<div id="preload-15"></div>
+<div id="preload-16"></div>
+<div id="preload-17"></div>
+<div id="preload-18"></div>
+<div id="preload-19"></div>
+<div id="preload-20"></div>
+<div id="preload-21"></div>
+<div id="preload-22"></div>
+<div id="preload-23"></div>
+<div id="preload-24"></div>
+<div id="preload-25"></div>
+<div id="preload-26"></div>
+<div id="preload-27"></div>
+<div id="preload-28"></div>
+<div id="preload-29"></div>
+<div id="preload-30"></div>
+<div id="preload-31"></div>
+<div id="preload-32"></div>
+<div id="preload-33"></div>
+<div id="preload-34"></div>
+<div id="preload-35"></div>
+<div id="preload-36"></div>
+<div id="preload-37"></div>
+<div id="preload-38"></div>
+<div id="preload-39"></div>
+<div id="preload-40"></div>
+<div id="preload-41"></div>
+<div id="preload-42"></div>
+<embed src="files/resume.pdf" width="0" height="0">
+
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 </html>
