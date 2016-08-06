@@ -4,7 +4,7 @@
  */
 
 $(window).on("load", function(){
-
+    $.backstretch('https://s3-us-west-2.amazonaws.com/asakawa.me/img/bg.jpg');
 
     /**
      * page elements to animate.
