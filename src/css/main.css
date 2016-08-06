@@ -33,6 +33,9 @@ div.container {
 a{
     text-decoration: none;
 }
+a:hover{
+    text-decoration: none;
+}
 
 .overlay {
     display: none;
@@ -284,9 +287,9 @@ a{
     position: absolute;
     background-color: white;
     width: 80%;
-    height: 80%;
+    height: 90%;
     left: 10%;
-    top: 10%;
+    top: 5%;
     overflow-y: auto;
     opacity: 1.0;
 }
@@ -296,6 +299,7 @@ a{
     text-align: center;
     font-size: 24px;
     padding-top: 20px;
+    padding-bottom: 20px;
     color: #444444;
     text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
 }
@@ -684,12 +688,10 @@ textarea {
 
 
     .tileContent {
-        position: absolute;
-        background-color: white;
+        height: 90%;
         width: 60%;
-        height: 80%;
         left: 20%;
-        top: 10%;
+        top: 5%;
         overflow-y: auto;
         opacity: 1.0;
     }

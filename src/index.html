@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/preLoad.css">
     <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/aboutFishFate.css">
     <link rel="stylesheet" href="css/tileFlip.css">
     <link rel="stylesheet" href="css/fancyLists.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -340,12 +341,143 @@
                     <div id="closeProjects"  class="tileButton tileClose"></div>
                 </div>
                 <div class="tileTitle col-sm-10">Projects</div>
-                <div class="freelanceInfo">
-                    //TODO: add fish tank rng, and electric skateboard build
-                </div>
             </li>
             <li class="row">
+                <div class="col-sm-6 center-block">
+                    <div id="aboutBlock" >
+                        <div>
+                            <h4>Fish Tank Random Number Generator</h4>
+                            <div id="fishDemo"><img src="img/fishDemo.gif"></div>
+                            <div id="fishIcon"><img src="img/fishIcon.png"></div>
+                            <h4  style="padding-left: 70px;" id="aboutViewHeader">Also see my android and iOS application that demonstrates the functionality
+                            of this project <a href="https://play.google.com/store/apps/details?id=com.ionicframework.fishfate542805"
+                                               target="_blank">Google Play Market</a></h4>
+                            <ol class="rectangle-list">
+                                <li>
+                                    <a id="listElement0"><div class="listItemHeader"><b>Fish Setup</b></div>
+                                        <div id="listItem0" class="overflow-scroll">
+                                            <img id="tankSetup" src="img/tankSetup.png"><br>
+                                            We used a raspberry pi and a raspberry pi fish eye camera to stream a video of the fish.
+                                            We then process this video to give us an x and y position of each fish for each frame of
+                                            the video.
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="listElement1"><div class="listItemHeader"><b>Fish Tracking</b></div>
+                                        <div id="listItem1" class="overflow-scroll">
+                                            <img id="fishPosition" src="img/fishPosition.png"><br>
+                                            Fish movements are tracked by their initial position on an x/y plane, where their
+                                            next position they move to will generate a binary number as
+                                            shown on the the picture above.
+                                        </div>
+                                    </a>
+                                </li>
 
+                                <li>
+                                    <a id="listElement2"><div class="listItemHeader"><b>Generating Randomness</b></div>
+                                        <div id="listItem2" class="overflow-scroll">
+                                            <br>We read in a certain number of bits from the bitstream and then calculate the
+                                            distribution of the 1's and 0's.<br><br>From that we calculate the Shannon Entropy which tells
+                                            the amount of entropy in the bits. Entropy is then calculated
+                                            until there are 256 bits of entropy to be inputted into a SHA1 Hash Function.<br><br>The hash
+                                            function then outputs a 160 bit Hex number and finally this Hex number is converted to
+                                            a Binary number to send to the server.
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a id="listElement3"><div class="listItemHeader"><b>How Random?</b></div>
+                                        <div id="listItem3" class="overflow-scroll">
+                                            <img id="scatter" src="img/graph.png" class="stretch"><br>
+                                            Above is a scatter plot graph that shows the
+                                            distribution of about 2000 randomly generated x and y values
+                                            from the fish between 0 to 128.
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a id="listElement4"><div class="listItemHeader"><b>The Stats</b></div>
+                                        <div id="listItem4" class="overflow-scroll">
+                                            <table id="listItemTable" class="nistTable smallBorderRadius">
+                                                <tr>
+                                                    <th align="left"><b>Statistical Test</b></th>
+                                                    <th><b>Successful Proportion</b></th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Frequency</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Block Frequency</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cumulative Sums</td>
+                                                    <td align="center">2/2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Runs</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Longest Run</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Random Binary Matrix Rank</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Discrete Fourier Transform (Spectral)</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Non-Overlapping (Aperiodic) Template Matching</td>
+                                                    <td align="center">146/148</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Overlapping (Periodic) Template Matching</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Approximate Entropy</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Serial</td>
+                                                    <td align="center">2/2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Linear Complexity</td>
+                                                    <td align="center">1/1</td>
+                                                </tr>
+                                            </table>
+                                            Above are NIST Tests used to determine the authenticity of the app's randomness
+                                        </div>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 center-block">
+                    <div class="freelanceInfo">
+                        <h4>Electric Motorized Skateboard</h4>
+                    </div>
+                    <div class="freelanceInfo">
+                        I started designing and prototyping electric skateboard builds back in 2014, and since then
+                        I have created five separate builds. My most recent build gets a range of about 10 miles, and
+                        has a top speed of 41 mph.
+                    </div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/1.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/2.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/3.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/4.png"></div>
+                    <div class="skateboardImage"><img src="img/skateboardBuilds/5.png"></div>
+                </div>
             </li>
         </ul>
     </div>
